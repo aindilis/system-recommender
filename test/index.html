@@ -1,0 +1,1642 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN"><html><head><title>FRDCSA: RADAR</title></head>
+<body bgcolor="#ffffff" text="#000000" link="#000066" vlink="#660033" alink="#ff0000">
+<table width=600 align=justify>
+<tr>
+<td align=justify>
+<font face="Arial, Helvetica, 'Sans Serif'">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr align="left" valign="bottom">
+    <td bgcolor="#000000" align="left">
+    .
+    </td>
+    <td bgcolor="#000000" align="right">
+      <a href="http://www.ri.cmu.edu/general/lab_project_search.html">
+      <img src="project_318_files/search.gif" alt="Search the site" width="68" height="15" border="0" vspace="1"></a><br>
+    </td></tr>
+  <tr>
+    <td bgcolor="#bbddff" colspan="2">
+      <font face="Arial, Helvetica, 'Sans Serif'" size="-1">
+      <a href="http://frdcsa.org">FRDCSA</a> | <a href="http://frdcsa.org/frdcsa/internal/index.html">internal codebases</a> | RADAR
+      </font><br>
+    </td>
+  </tr>
+</tbody></table><p>
+
+<table><tbody><tr valign="top">
+<td valign="top"><img src="project.jpg" width="200" height="200" border="0" alt="[Project image]"><br></td>
+<td><font face="Arial, Helvetica, 'Sans Serif'">
+ <font face="Arial, Helvetica, 'Sans Serif'" size="+2"><b>RADAR </b></font><br></font><p><font face="Arial, Helvetica, 'Sans Serif'"><b>
+Architecture Diagram:
+</b><font size=-3>
+<a href="arch.gif">GIF</a>
+</font></font><br></td><td></td>
+</tr></tbody></table><font face="Arial, Helvetica, 'Sans Serif'"> <font face="Arial, Helvetica, 'Sans Serif'" size="-1"> <b>Jump to:</b>
+<a href="#description"> Project Description</a> | <a href="#capabilities"> Capabilities</a></font></font></p><p>
+</p><p><font face="Arial, Helvetica, 'Sans Serif'"><a name="description"></a>
+
+<table width="100%" cellpadding="3" cellspacing="0" border="0">
+<tbody><tr valign="top" bgcolor="#cccccc">
+<td><font face="Arial, Helvetica, 'Sans Serif'"><b>Project Description</b></font></td>
+</tr></tbody></table></font></p><p>
+
+<font face="Arial, Helvetica, 'Sans Serif'"><font color="000000"><long-description>
+    <p>
+      The  goal   of  the  FRDCSA  is  to   maximize  problem  solving
+      capabilities in a formal sense.</font>
+<font color="000000">Without reference to a specific
+      logic,  one can simply  think in  terms of  computing functions.</font>
+<font color="000000">From  this abstract  perspective it  is possible  to demonstrate
+      that the complexity  of the function must grow  in proportion to
+      the   complexity  of   the   problem  it   purports  to   solve.</font>
+<font color="000000">Traditionally,   complexity   is   measured  using   Kolomogorov
+      complexity.</font>
+<font color="000000">There are  several  kinds of  problems, those  for
+      which a  computable function  is a solution,  those for  which a
+      solution exists  but is not  computable, and those for  which no
+      solution exists.</font>
+<font color="000000">From a practical  point of view,  although no
+      program exists  which can  compute arbitrary functions,  using a
+      sequence of increasingly complex programs we can approximate any
+      function with  increasing coverage and  accuracy.</font>
+<font color="000000">Although some
+      would say  this is not  "interesting", we can however  use these
+      improved  approximations  to  reconsider and  potentially  solve
+      outstanding problems of undisputed importance.</font>
+<font color="000000"></p>
+    <p>
+      Much depends,  of course, on  the availability of  software, and
+      the  integration  of  this  software  into  mainstream  software
+      distributions  like Debian  GNU/Linux  and FreeBSD,  as well  as
+      public awareness.</font>
+<font color="000000"></p>
+    <p>
+      Now a  brief explanation of the role  of artificial intelligence
+      in computer science is necessary.</font>
+<font color="000000">AI is to CS as Philosophy of
+      Science is to Science.</font>
+<font color="000000">That  is, it is simply a designation for
+      currently  unsolved problems  in  the field.</font>
+<font color="000000">Therefore when  a
+      problem is solved, for instance  chess, it no longer is "chess",
+      rather  it becomes  "parallel  brute force  negamax search  with
+      alpha-beta pruning".</font>
+<font color="000000"></p>
+    <p>
+      Software which  implements desired capabilities  must be located
+      and  incorporated.</font>
+<font color="000000">A  thorough  <a href="http://frdcsa.org/frdcsa/internal/study/index.html">study</a>  of  available  software
+      systems indicates that there is  a great deal of useful software
+      that  simply has not  been incorporated  into the  public domain
+      distributions.</font>
+<font color="000000">A quick look  around reveals a tremendous amount
+      of substance, yet interrelation  could be improved.</font>
+<font color="000000">I.e., there
+      exists a lot of free or potentially free software, yet as of yet
+      there does not appear to exist a popular and thoroughly complete
+      map of this software.</font>
+<font color="000000"></p>
+    <p>
+      The  goal   of  the  <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>  project,  which   stands  for  Rapid
+      Application Detection and Retrieval,  is to create this thorough
+      map using  various techniques.</font>
+<font color="000000">Therefore <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> is  an advanced
+      tool  which employs  several methods  to locate  existing online
+      codebases and extract ontological information from web pages and
+      online documentation.</font>
+<font color="000000">These  ontological relations include some
+      that associate codebases with authors, documentation, licensing,
+      releases,  capabilities and so  on.</font>
+<font color="000000">In  practice we  have found
+      that  a number  of strategies  employed simulatenously  have the
+      greatest  benefit.</font>
+<font color="000000">(I.e.  focused  crawling  of project  sites
+      (iVia,  WebKB, Rainbow,  Spider, WebSphinx,  etc), automatically
+      mapping  of web  site  content (Minorthird,  MnM, Melita,  Gate,
+      Alembic, etc.)   to ontology management  systems (Kaon, Protege,
+      Cyc,  Powerloom.</font>
+<font color="000000">In  addition  to spidering,  we  use  various
+      methods in online search  engines, like query expansion, keyword
+      lists,  search templates,  etc.  to  identify online  pages.</font>
+<font color="000000">We
+      also  <a href="http://frdcsa.org/frdcsa/internal/perform/index.html">perform</a>  document analysis,  using  various techniques  to
+      identify codebases from documents.</font>
+<font color="000000">and ftp sites, and so on.)).</font>
+<font color="000000"></p>
+    <p>
+      When  software systems  have  been found  and their  ontological
+      relations  mapped   out,  it  then  becomes   possible  to  make
+      deductions about whether  their capabilities may be incorporated
+      to  our systems, i.e.,  we can  determine to  what extent  it is
+      possible   to   use  the   codebase,   according  to   licensing
+      restrictions.</font>
+<font color="000000">So for instance, if the license permits, packages
+      are created for various architectures using our <a href="http://frdcsa.org/frdcsa/internal/packager/index.html">packager</a> system,
+      and these  are uploaded to our package  repositories for various
+      systems  (Linux (Debian, Gentoo,  RHN, apt-rpm),  BSD (FreeBSD),
+      etc.).</font>
+<font color="000000"></p>
+    <p>
+      As our  goal is  to increase the  capabilities of  free software
+      systems,  an  as of  yet  unnamed  subsystem employs  key-player
+      analysis   to   determine  which   software   must  be   somehow
+      transplanted to open source, either  by appeal to the authors to
+      change  license, or  by reimplementation  or  substitution where
+      possible.</font>
+<font color="000000"></p>
+    <p>
+      The software ontology maintained  by <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> serves to interrelate
+      discovered  capabilities  with  the  existing needs  of  various
+      internal  projects and  codebases, as  well as  answer questions
+      about capabilities and  systems.</font>
+<font color="000000">Eventually, these capabilities
+      will  be  refactored  into   separate  systems.</font>
+<font color="000000">But  the  most
+      interesting aspect  is how quickly functionality  can be applied
+      to  support  the goals  of  the  project.</font>
+<font color="000000">As functionality  is
+      identified, the system is able  in many cases to quickly package
+      the best codebases which support this, and then various existing
+      system take over the  role of incorporating this capability into
+      the system  effectively.</font>
+<font color="000000">Therefore the system  builds on itself
+      intelligently, in a positive feedback loop.</font>
+<font color="000000"></p>
+    <p>
+      Here is  just a  routine trace of  <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> in action.</font>
+<font color="000000">This trace
+      involves install a complex perl  module.</font>
+<font color="000000">Note that in this case
+      the bulk of the work is done by debaux, a program for generating
+      debs from perl modules.</font>
+<font color="000000"></p>
+    <pre>
+/var/lib/<a href="http://frdcsa.org/frdcsa/internal/myfrdcsa/index.html">myfrdcsa</a>/codebases/data/frdcsa-perl $ sudo <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> install Text::NSP
+&lt;ITEM:Text::NSP>
+&lt;CATEGORY:Perl Module>
+0) Perl Module
+1) URL
+2) Freshmeat
+3) Local File
+4) SourceForge
+5) FTP Site
+6) Perl Module
+7) Debian Package
+0
+Module: Text::NSP
+Going to read /home/jasayne/.cpan/Metadata
+  Database was generated on Thu, 02 Jun 2005 23:05:55 GMT
+Fetching with LWP:
+  ftp://archive.progeny.com/CPAN/authors/01mailrc.txt.gz
+Going to read /home/jasayne/.cpan/sources/authors/01mailrc.txt.gz
+CPAN: Compress::Zlib loaded ok
+Fetching with LWP:
+  ftp://archive.progeny.com/CPAN/modules/02packages.details.txt.gz
+Going to read /home/jasayne/.cpan/sources/modules/02packages.details.txt.gz
+  Database was generated on Sat, 04 Jun 2005 21:58:53 GMT
+Fetching with LWP:
+  ftp://archive.progeny.com/CPAN/modules/03modlist.data.gz
+Going to read /home/jasayne/.cpan/sources/modules/03modlist.data.gz
+Going to write /home/jasayne/.cpan/Metadata
+Status: Available through debaux
+Command: debaux-build --cpan Text::NSP
+CPAN: Storable loaded ok
+Going to read /home/jasayne/.cpan/Metadata
+  Database was generated on Sat, 04 Jun 2005 21:58:53 GMT
+&lt;&lt;&lt;DIR:Text-NSP-0.71>>>
+&lt;&lt;&lt;ANA:Text-NSP>>>
+Text-NSP - 0.71
+Running get for module Text::NSP
+Fetching with LWP:
+  ftp://archive.progeny.com/CPAN/authors/id/T/TP/TPEDERSE/Text-NSP-0.71.tar.gz
+CPAN: Digest::MD5 loaded ok
+Fetching with LWP:
+  ftp://archive.progeny.com/CPAN/authors/id/T/TP/TPEDERSE/CHECKSUMS
+CPAN: Compress::Zlib loaded ok
+Checksum for /home/jasayne/.cpan/sources/authors/id/T/TP/TPEDERSE/Text-NSP-0.71.tar.gz ok
+Scanning cache /home/jasayne/.cpan/build for sizes
+Text-NSP-0.71/
+Text-NSP-0.71/Makefile.PL
+Text-NSP-0.71/CHANGES
+Text-NSP-0.71/FDL
+Text-NSP-0.71/GPL
+Text-NSP-0.71/INSTALL
+Text-NSP-0.71/MANIFEST
+Text-NSP-0.71/statistic.pl
+Text-NSP-0.71/NSP.pm
+Text-NSP-0.71/README
+Text-NSP-0.71/count.pl
+Text-NSP-0.71/Docs/
+Text-NSP-0.71/Docs/cicling2003.pdf
+Text-NSP-0.71/Docs/ChangeLog-v0.50.txt
+Text-NSP-0.71/Docs/ChangeLog-v0.51.txt
+Text-NSP-0.71/Docs/ChangeLog-v0.53.txt
+Text-NSP-0.71/Docs/ChangeLog-v0.55.txt
+Text-NSP-0.71/Docs/ChangeLog-v0.57.txt
+Text-NSP-0.71/Docs/ChangeLog-v0.59.txt
+Text-NSP-0.71/Docs/ChangeLog-v0.61.txt
+Text-NSP-0.71/Docs/ChangeLog-v0.63.txt
+Text-NSP-0.71/Docs/ChangeLog-v0.65.txt
+Text-NSP-0.71/Docs/ChangeLog-v0.67.txt
+Text-NSP-0.71/Docs/ChangeLog-v0.69.txt
+Text-NSP-0.71/Docs/ChangeLog-v0.71.txt
+Text-NSP-0.71/Docs/FAQ.pod
+Text-NSP-0.71/Docs/Measures.pod
+Text-NSP-0.71/Docs/NewStats.pod
+Text-NSP-0.71/Docs/README.pod
+Text-NSP-0.71/Docs/Todo.pod
+Text-NSP-0.71/Docs/Usage.pod
+Text-NSP-0.71/Docs/cicling2003.ps
+Text-NSP-0.71/Measures/
+Text-NSP-0.71/Measures/leftFisher.pm
+Text-NSP-0.71/Measures/dice.pm
+Text-NSP-0.71/Measures/odds.pm
+Text-NSP-0.71/Measures/ll.pm
+Text-NSP-0.71/Measures/ll3.pm
+Text-NSP-0.71/Measures/measure2d.pm
+Text-NSP-0.71/Measures/measure3d.pm
+Text-NSP-0.71/Measures/phi.pm
+Text-NSP-0.71/Measures/pmi.pm
+Text-NSP-0.71/Measures/rightFisher.pm
+Text-NSP-0.71/Measures/tmi.pm
+Text-NSP-0.71/Measures/tmi3.pm
+Text-NSP-0.71/Measures/tscore.pm
+Text-NSP-0.71/Measures/x2.pm
+Text-NSP-0.71/Testing/
+Text-NSP-0.71/Testing/combig/
+Text-NSP-0.71/Testing/combig/normal-op.sh
+Text-NSP-0.71/Testing/combig/README.txt
+Text-NSP-0.71/Testing/combig/error-handling.sh
+Text-NSP-0.71/Testing/combig/test-A1.big
+Text-NSP-0.71/Testing/combig/test-A1.reqd
+Text-NSP-0.71/Testing/combig/test-A2.big
+Text-NSP-0.71/Testing/combig/test-A2.reqd
+Text-NSP-0.71/Testing/combig/test-A3.big
+Text-NSP-0.71/Testing/combig/test-A3.reqd
+Text-NSP-0.71/Testing/combig/test-A4.big
+Text-NSP-0.71/Testing/combig/test-A4.reqd
+Text-NSP-0.71/Testing/combig/test-A5.big
+Text-NSP-0.71/Testing/combig/test-A5.reqd
+Text-NSP-0.71/Testing/combig/test-A6.big
+Text-NSP-0.71/Testing/combig/test-A6.reqd
+Text-NSP-0.71/Testing/combig/test-B1.big
+Text-NSP-0.71/Testing/combig/test-B1.reqd
+Text-NSP-0.71/Testing/combig/test-B2.big
+Text-NSP-0.71/Testing/combig/test-B2.reqd
+Text-NSP-0.71/Testing/combig/test-B3.big
+Text-NSP-0.71/Testing/combig/test-B3.reqd
+Text-NSP-0.71/Testing/combig/testA1.sh
+Text-NSP-0.71/Testing/combig/testA2.sh
+Text-NSP-0.71/Testing/combig/testA3.sh
+Text-NSP-0.71/Testing/combig/testA4.sh
+Text-NSP-0.71/Testing/combig/testA5.sh
+Text-NSP-0.71/Testing/combig/testA6.sh
+Text-NSP-0.71/Testing/combig/testB1.sh
+Text-NSP-0.71/Testing/combig/testB2.sh
+Text-NSP-0.71/Testing/combig/testB3.sh
+Text-NSP-0.71/Testing/ll/
+Text-NSP-0.71/Testing/ll/normal-op.sh
+Text-NSP-0.71/Testing/ll/README.txt
+Text-NSP-0.71/Testing/ll/error-handling.sh
+Text-NSP-0.71/Testing/ll/test-1.cnt
+Text-NSP-0.71/Testing/ll/test-1.sub-1.cnt
+Text-NSP-0.71/Testing/ll/test-1.sub-1.reqd
+Text-NSP-0.71/Testing/ll/test-1.sub-2.cnt
+Text-NSP-0.71/Testing/ll/test-1.sub-2.reqd
+Text-NSP-0.71/Testing/ll/test-1.sub-2.freq_combo.txt
+Text-NSP-0.71/Testing/ll/test-1.sub-3.cnt
+Text-NSP-0.71/Testing/ll/test-1.sub-3.reqd
+Text-NSP-0.71/Testing/ll/test-1.sub-4.cnt
+Text-NSP-0.71/Testing/ll/test-1.sub-4.error.reqd
+Text-NSP-0.71/Testing/ll/test-1.sub-4.reqd
+Text-NSP-0.71/Testing/ll/test-2.sub-1-a.cnt
+Text-NSP-0.71/Testing/ll/test-2.sub-1-a.reqd
+Text-NSP-0.71/Testing/ll/test-2.sub-1-b.cnt
+Text-NSP-0.71/Testing/ll/test-2.sub-1-b.freq_combo.txt
+Text-NSP-0.71/Testing/ll/test-2.sub-1-b.reqd
+Text-NSP-0.71/Testing/<a href="http://frdcsa.org/frdcsa/internal/all/index.html">all</a>-TESTS.sh
+Text-NSP-0.71/Testing/count/
+Text-NSP-0.71/Testing/count/normal-op.sh
+Text-NSP-0.71/Testing/count/README.txt
+Text-NSP-0.71/Testing/count/test-1.freq_comb.out
+Text-NSP-0.71/Testing/count/error-handling.sh
+Text-NSP-0.71/Testing/count/test-1.sub-1-a.token.txt
+Text-NSP-0.71/Testing/count/test-1.sub-1-a.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-1-b.token.txt
+Text-NSP-0.71/Testing/count/test-1.sub-1-b.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-1-c.token.txt
+Text-NSP-0.71/Testing/count/test-1.sub-1-c.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-1-d.token.txt
+Text-NSP-0.71/Testing/count/test-1.sub-1-d.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-1-e.token.txt
+Text-NSP-0.71/Testing/count/test-1.sub-1-e.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-1-f.token.txt
+Text-NSP-0.71/Testing/count/test-1.sub-1-f.reqd
+Text-NSP-0.71/Testing/count/data-dir/
+Text-NSP-0.71/Testing/count/data-dir/data-subdir-1/
+Text-NSP-0.71/Testing/count/data-dir/data-subdir-1/test-1.txt
+Text-NSP-0.71/Testing/count/data-dir/test-5.txt
+Text-NSP-0.71/Testing/count/data-dir/test-6.txt
+Text-NSP-0.71/Testing/count/data-dir/data-subdir-2/
+Text-NSP-0.71/Testing/count/data-dir/data-subdir-2/test-2.txt
+Text-NSP-0.71/Testing/count/data-dir/data-subdir-3/
+Text-NSP-0.71/Testing/count/data-dir/data-subdir-3/test-3.txt
+Text-NSP-0.71/Testing/count/data-dir/data-subdir-4/
+Text-NSP-0.71/Testing/count/data-dir/data-subdir-4/test-4.txt
+Text-NSP-0.71/Testing/count/test-1.txt
+Text-NSP-0.71/Testing/count/test-1.sub-10-a.nontoken.txt
+Text-NSP-0.71/Testing/count/test-1.sub-10-a.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-10-b.nontoken.txt
+Text-NSP-0.71/Testing/count/test-1.sub-10-b.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-10-c.nontoken.txt
+Text-NSP-0.71/Testing/count/test-1.sub-10-c.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-2-a.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-2-b.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-2-c.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-2-d.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-2-e.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-3-a.freq_combo.txt
+Text-NSP-0.71/Testing/count/test-1.sub-3-b.freq_combo.txt
+Text-NSP-0.71/Testing/count/test-1.sub-3-c.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-3-c.freq_combo.txt
+Text-NSP-0.71/Testing/count/test-1.sub-3-d.freq_combo.txt
+Text-NSP-0.71/Testing/count/test-1.sub-3-d.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-4-a.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-4-b.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-4-c.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-4-c.stop.txt
+Text-NSP-0.71/Testing/count/test-1.sub-4-d.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-4-d.stop.txt
+Text-NSP-0.71/Testing/count/test-1.sub-4-e.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-4-e.stop.txt
+Text-NSP-0.71/Testing/count/test-1.sub-4.stop.txt
+Text-NSP-0.71/Testing/count/test-1.sub-5-a.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-5-b.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-5-c.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-5-d.reqd
+Text-NSP-0.71/Testing/count/test-2.txt
+Text-NSP-0.71/Testing/count/test-1.sub-5.txt
+Text-NSP-0.71/Testing/count/test-1.sub-6-a.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-6-b.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-6.txt
+Text-NSP-0.71/Testing/count/test-1.sub-7-a.histo.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-7-b.histo.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-8-a.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-8-b.reqd
+Text-NSP-0.71/Testing/count/test-1.sub-9.reqd
+Text-NSP-0.71/Testing/count/test-2.sub-1.reqd
+Text-NSP-0.71/Testing/count/test-2.sub-2.reqd
+Text-NSP-0.71/Testing/count/test-2.sub-3.reqd
+Text-NSP-0.71/Testing/count/test-2.sub-4.reqd
+Text-NSP-0.71/Testing/count/test-2.sub-5.reqd
+Text-NSP-0.71/Testing/count/test-2.sub-6.reqd
+Text-NSP-0.71/Testing/count/test-2.sub-7.reqd
+Text-NSP-0.71/Testing/count/test-2.sub-8.freq_combo.txt
+Text-NSP-0.71/Testing/count/test-2.sub-8.reqd
+Text-NSP-0.71/Testing/dice/
+Text-NSP-0.71/Testing/dice/normal-op.sh
+Text-NSP-0.71/Testing/dice/README.txt
+Text-NSP-0.71/Testing/dice/error-handling.sh
+Text-NSP-0.71/Testing/dice/test-1.cnt
+Text-NSP-0.71/Testing/dice/test-1.sub-1.cnt
+Text-NSP-0.71/Testing/dice/test-1.sub-1.reqd
+Text-NSP-0.71/Testing/dice/test-1.sub-2.cnt
+Text-NSP-0.71/Testing/dice/test-1.sub-2.reqd
+Text-NSP-0.71/Testing/dice/test-1.sub-2.freq_combo.txt
+Text-NSP-0.71/Testing/dice/test-1.sub-3.cnt
+Text-NSP-0.71/Testing/dice/test-1.sub-3.reqd
+Text-NSP-0.71/Testing/dice/test-1.sub-4.cnt
+Text-NSP-0.71/Testing/dice/test-1.sub-4.error.reqd
+Text-NSP-0.71/Testing/dice/test-1.sub-4.reqd
+Text-NSP-0.71/Testing/dice/test-2.sub-1-a.cnt
+Text-NSP-0.71/Testing/dice/test-2.sub-1-a.reqd
+Text-NSP-0.71/Testing/dice/test-2.sub-1-b.cnt
+Text-NSP-0.71/Testing/dice/test-2.sub-1-b.freq_combo.txt
+Text-NSP-0.71/Testing/dice/test-2.sub-1-b.reqd
+Text-NSP-0.71/Testing/huge-combine/
+Text-NSP-0.71/Testing/huge-combine/normal-op.sh
+Text-NSP-0.71/Testing/huge-combine/README.txt
+Text-NSP-0.71/Testing/huge-combine/error-handling.sh
+Text-NSP-0.71/Testing/huge-combine/test-A1.count1
+Text-NSP-0.71/Testing/huge-combine/test-A1.count2
+Text-NSP-0.71/Testing/huge-combine/test-A1.reqd
+Text-NSP-0.71/Testing/huge-combine/test-A2.count1
+Text-NSP-0.71/Testing/huge-combine/test-A2.count2
+Text-NSP-0.71/Testing/huge-combine/test-A2.reqd
+Text-NSP-0.71/Testing/huge-combine/test-A3.count1
+Text-NSP-0.71/Testing/huge-combine/test-A3.count2
+Text-NSP-0.71/Testing/huge-combine/test-A3.reqd
+Text-NSP-0.71/Testing/huge-combine/test-A4.count1
+Text-NSP-0.71/Testing/huge-combine/test-A4.count2
+Text-NSP-0.71/Testing/huge-combine/test-A4.reqd
+Text-NSP-0.71/Testing/huge-combine/test-A5.count1
+Text-NSP-0.71/Testing/huge-combine/test-A5.count2
+Text-NSP-0.71/Testing/huge-combine/test-A5.reqd
+Text-NSP-0.71/Testing/huge-combine/test-A6.count1
+Text-NSP-0.71/Testing/huge-combine/test-A6.count2
+Text-NSP-0.71/Testing/huge-combine/test-A6.reqd
+Text-NSP-0.71/Testing/huge-combine/test-A7.count1
+Text-NSP-0.71/Testing/huge-combine/test-A7.count2
+Text-NSP-0.71/Testing/huge-combine/test-A7.reqd
+Text-NSP-0.71/Testing/huge-combine/test-B1.count1
+Text-NSP-0.71/Testing/huge-combine/test-B1.count2
+Text-NSP-0.71/Testing/huge-combine/test-B1.reqd
+Text-NSP-0.71/Testing/huge-combine/test-B2.count1
+Text-NSP-0.71/Testing/huge-combine/test-B2.count2
+Text-NSP-0.71/Testing/huge-combine/test-B2.reqd
+Text-NSP-0.71/Testing/huge-combine/testA1.sh
+Text-NSP-0.71/Testing/huge-combine/testA2.sh
+Text-NSP-0.71/Testing/huge-combine/testA3.sh
+Text-NSP-0.71/Testing/huge-combine/testA4.sh
+Text-NSP-0.71/Testing/huge-combine/testA5.sh
+Text-NSP-0.71/Testing/huge-combine/testA6.sh
+Text-NSP-0.71/Testing/huge-combine/testA7.sh
+Text-NSP-0.71/Testing/huge-combine/testB1.sh
+Text-NSP-0.71/Testing/huge-combine/testB2.sh
+Text-NSP-0.71/Testing/huge-count/
+Text-NSP-0.71/Testing/huge-count/README.txt
+Text-NSP-0.71/Testing/huge-count/lc.pl
+Text-NSP-0.71/Testing/huge-count/test-A1.reqd/
+Text-NSP-0.71/Testing/huge-count/test-A1.reqd/test-A1.data1.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A1.reqd/huge-count.output
+Text-NSP-0.71/Testing/huge-count/test-A1.reqd/test-A1.data1
+Text-NSP-0.71/Testing/huge-count/test-A1.reqd/test-A1.data2
+Text-NSP-0.71/Testing/huge-count/test-A1.reqd/test-A1.data3
+Text-NSP-0.71/Testing/huge-count/test-A1.reqd/test-A1.data2.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A1.reqd/test-A1.data3.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A1.reqd/test-A1.data4
+Text-NSP-0.71/Testing/huge-count/test-A1.reqd/test-A1.data4.bigrams
+Text-NSP-0.71/Testing/huge-count/error-handling.sh
+Text-NSP-0.71/Testing/huge-count/nontoken.regex
+Text-NSP-0.71/Testing/huge-count/normal-op.sh
+Text-NSP-0.71/Testing/huge-count/stoplist
+Text-NSP-0.71/Testing/huge-count/test-A1.data
+Text-NSP-0.71/Testing/huge-count/test-A3.data1
+Text-NSP-0.71/Testing/huge-count/test-A3.data2
+Text-NSP-0.71/Testing/huge-count/test-A3.data3
+Text-NSP-0.71/Testing/huge-count/test-A3.data4
+Text-NSP-0.71/Testing/huge-count/test-A41.data
+Text-NSP-0.71/Testing/huge-count/test-A41.reqd
+Text-NSP-0.71/Testing/huge-count/test-A42.reqd
+Text-NSP-0.71/Testing/huge-count/test-A43.data1
+Text-NSP-0.71/Testing/huge-count/test-A43.data2
+Text-NSP-0.71/Testing/huge-count/test-A43.data3
+Text-NSP-0.71/Testing/huge-count/test-A43.data4
+Text-NSP-0.71/Testing/huge-count/test-A43.reqd
+Text-NSP-0.71/Testing/huge-count/testA1.sh
+Text-NSP-0.71/Testing/huge-count/test-A51.data
+Text-NSP-0.71/Testing/huge-count/test-A53.data1
+Text-NSP-0.71/Testing/huge-count/test-A53.data2
+Text-NSP-0.71/Testing/huge-count/test-A53.data3
+Text-NSP-0.71/Testing/huge-count/test-A53.data4
+Text-NSP-0.71/Testing/huge-count/test-A6.reqd
+Text-NSP-0.71/Testing/huge-count/test-A61.data
+Text-NSP-0.71/Testing/huge-count/test-A63.data1
+Text-NSP-0.71/Testing/huge-count/test-A63.data2
+Text-NSP-0.71/Testing/huge-count/test-A63.data3
+Text-NSP-0.71/Testing/huge-count/test-A63.data4
+Text-NSP-0.71/Testing/huge-count/test-A71.data
+Text-NSP-0.71/Testing/huge-count/test-A73.data1
+Text-NSP-0.71/Testing/huge-count/test-A73.data2
+Text-NSP-0.71/Testing/huge-count/test-A73.data3
+Text-NSP-0.71/Testing/huge-count/test-A73.data4
+Text-NSP-0.71/Testing/huge-count/test-A8.count
+Text-NSP-0.71/Testing/huge-count/test-A81.data
+Text-NSP-0.71/Testing/huge-count/test-A83.data1
+Text-NSP-0.71/Testing/huge-count/test-A83.data2
+Text-NSP-0.71/Testing/huge-count/test-A83.data3
+Text-NSP-0.71/Testing/huge-count/test-A83.data4
+Text-NSP-0.71/Testing/huge-count/test-B1.data1
+Text-NSP-0.71/Testing/huge-count/test-B1.data3
+Text-NSP-0.71/Testing/huge-count/test-B1.reqd
+Text-NSP-0.71/Testing/huge-count/test-B2.data
+Text-NSP-0.71/Testing/huge-count/test-B2.reqd
+Text-NSP-0.71/Testing/huge-count/testA2.sh
+Text-NSP-0.71/Testing/huge-count/testA3.sh
+Text-NSP-0.71/Testing/huge-count/testA4.sh
+Text-NSP-0.71/Testing/huge-count/testA51.sh
+Text-NSP-0.71/Testing/huge-count/testA52.sh
+Text-NSP-0.71/Testing/huge-count/testA53.sh
+Text-NSP-0.71/Testing/huge-count/testA6.sh
+Text-NSP-0.71/Testing/huge-count/testA71.sh
+Text-NSP-0.71/Testing/huge-count/testA72.sh
+Text-NSP-0.71/Testing/huge-count/testA73.sh
+Text-NSP-0.71/Testing/huge-count/testA8.sh
+Text-NSP-0.71/Testing/huge-count/testB1.sh
+Text-NSP-0.71/Testing/huge-count/testB2.sh
+Text-NSP-0.71/Testing/huge-count/token.regex
+Text-NSP-0.71/Testing/huge-count/test-A2.data/
+Text-NSP-0.71/Testing/huge-count/test-A2.data/test-A2.data1
+Text-NSP-0.71/Testing/huge-count/test-A2.data/test-A2.data2
+Text-NSP-0.71/Testing/huge-count/test-A2.data/test-A2.data3
+Text-NSP-0.71/Testing/huge-count/test-A2.data/test-A2.data4
+Text-NSP-0.71/Testing/huge-count/test-A2.reqd/
+Text-NSP-0.71/Testing/huge-count/test-A2.reqd/test-A2.data1.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A2.reqd/huge-count.output
+Text-NSP-0.71/Testing/huge-count/test-A2.reqd/test-A2.data2.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A2.reqd/test-A2.data3.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A2.reqd/test-A2.data4.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A3.reqd/
+Text-NSP-0.71/Testing/huge-count/test-A3.reqd/test-A3.data1.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A3.reqd/huge-count.output
+Text-NSP-0.71/Testing/huge-count/test-A3.reqd/test-A3.data2.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A3.reqd/test-A3.data3.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A3.reqd/test-A3.data4.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A42.data/
+Text-NSP-0.71/Testing/huge-count/test-A42.data/test-A42.data1
+Text-NSP-0.71/Testing/huge-count/test-A42.data/test-A42.data2
+Text-NSP-0.71/Testing/huge-count/test-A42.data/test-A42.data3
+Text-NSP-0.71/Testing/huge-count/test-A42.data/test-A42.data4
+Text-NSP-0.71/Testing/huge-count/test-A5.reqd/
+Text-NSP-0.71/Testing/huge-count/test-A5.reqd/test-A5.data1.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A5.reqd/huge-count.output
+Text-NSP-0.71/Testing/huge-count/test-A5.reqd/test-A5.data1
+Text-NSP-0.71/Testing/huge-count/test-A5.reqd/test-A5.data2
+Text-NSP-0.71/Testing/huge-count/test-A5.reqd/test-A5.data3
+Text-NSP-0.71/Testing/huge-count/test-A5.reqd/test-A5.data2.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A5.reqd/test-A5.data3.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A5.reqd/test-A5.data4
+Text-NSP-0.71/Testing/huge-count/test-A5.reqd/test-A5.data4.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A52.data/
+Text-NSP-0.71/Testing/huge-count/test-A52.data/test-A52.data1
+Text-NSP-0.71/Testing/huge-count/test-A52.data/test-A52.data2
+Text-NSP-0.71/Testing/huge-count/test-A52.data/test-A52.data3
+Text-NSP-0.71/Testing/huge-count/test-A52.data/test-A52.data4
+Text-NSP-0.71/Testing/huge-count/test-A62.data/
+Text-NSP-0.71/Testing/huge-count/test-A62.data/test-A42.data1
+Text-NSP-0.71/Testing/huge-count/test-A62.data/test-A42.data2
+Text-NSP-0.71/Testing/huge-count/test-A62.data/test-A42.data3
+Text-NSP-0.71/Testing/huge-count/test-A62.data/test-A42.data4
+Text-NSP-0.71/Testing/huge-count/test-A7.reqd/
+Text-NSP-0.71/Testing/huge-count/test-A7.reqd/test-A7.data1.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A7.reqd/huge-count.output
+Text-NSP-0.71/Testing/huge-count/test-A7.reqd/test-A7.data1
+Text-NSP-0.71/Testing/huge-count/test-A7.reqd/test-A7.data2
+Text-NSP-0.71/Testing/huge-count/test-A7.reqd/test-A7.data3
+Text-NSP-0.71/Testing/huge-count/test-A7.reqd/test-A7.data2.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A7.reqd/test-A7.data3.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A7.reqd/test-A7.data4
+Text-NSP-0.71/Testing/huge-count/test-A7.reqd/test-A7.data4.bigrams
+Text-NSP-0.71/Testing/huge-count/test-A72.data/
+Text-NSP-0.71/Testing/huge-count/test-A72.data/test-A72.data1
+Text-NSP-0.71/Testing/huge-count/test-A72.data/test-A72.data2
+Text-NSP-0.71/Testing/huge-count/test-A72.data/test-A72.data3
+Text-NSP-0.71/Testing/huge-count/test-A72.data/test-A72.data4
+Text-NSP-0.71/Testing/huge-count/test-A82.data/
+Text-NSP-0.71/Testing/huge-count/test-A82.data/test-A82.data1
+Text-NSP-0.71/Testing/huge-count/test-A82.data/test-A82.data2
+Text-NSP-0.71/Testing/huge-count/test-A82.data/test-A82.data3
+Text-NSP-0.71/Testing/huge-count/test-A82.data/test-A82.data4
+Text-NSP-0.71/Testing/huge-count/test-B1.data2/
+Text-NSP-0.71/Testing/huge-count/test-B1.data2/test-A2.data1
+Text-NSP-0.71/Testing/huge-count/test-B1.data2/test-A2.data2
+Text-NSP-0.71/Testing/huge-count/test-B1.data2/test-A2.data3
+Text-NSP-0.71/Testing/huge-count/test-B1.data2/test-A2.data4
+Text-NSP-0.71/Testing/kocos/
+Text-NSP-0.71/Testing/kocos/integration/
+Text-NSP-0.71/Testing/kocos/integration/normal-op.sh
+Text-NSP-0.71/Testing/kocos/integration/README.txt
+Text-NSP-0.71/Testing/kocos/integration/error-handling.sh
+Text-NSP-0.71/Testing/kocos/integration/test-A1.in
+Text-NSP-0.71/Testing/kocos/integration/test-A1a.reqd
+Text-NSP-0.71/Testing/kocos/integration/test-A1b.reqd
+Text-NSP-0.71/Testing/kocos/integration/test-A1c.reqd
+Text-NSP-0.71/Testing/kocos/integration/test-A1d.reqd
+Text-NSP-0.71/Testing/kocos/integration/test-A2.in
+Text-NSP-0.71/Testing/kocos/integration/test-A2a.reqd
+Text-NSP-0.71/Testing/kocos/integration/test-A2b.reqd
+Text-NSP-0.71/Testing/kocos/integration/test-A2c.reqd
+Text-NSP-0.71/Testing/kocos/integration/test-A2d.reqd
+Text-NSP-0.71/Testing/kocos/integration/test-A3.in
+Text-NSP-0.71/Testing/kocos/integration/test-A3a.reqd
+Text-NSP-0.71/Testing/kocos/integration/test-A3b.reqd
+Text-NSP-0.71/Testing/kocos/integration/test-A3c.reqd
+Text-NSP-0.71/Testing/kocos/integration/test-A3d.reqd
+Text-NSP-0.71/Testing/kocos/integration/testA1.sh
+Text-NSP-0.71/Testing/kocos/integration/testA2.sh
+Text-NSP-0.71/Testing/kocos/integration/testA3.sh
+Text-NSP-0.71/Testing/kocos/unit/
+Text-NSP-0.71/Testing/kocos/unit/normal-op.sh
+Text-NSP-0.71/Testing/kocos/unit/README.txt
+Text-NSP-0.71/Testing/kocos/unit/error-handling.sh
+Text-NSP-0.71/Testing/kocos/unit/test-A1.count
+Text-NSP-0.71/Testing/kocos/unit/test-A10.count
+Text-NSP-0.71/Testing/kocos/unit/test-A10.regex
+Text-NSP-0.71/Testing/kocos/unit/test-A10a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A10b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A10c.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A10d.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A10e.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A11.count
+Text-NSP-0.71/Testing/kocos/unit/test-A11.regex
+Text-NSP-0.71/Testing/kocos/unit/test-A11a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A11b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A11c.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A11d.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A12.count
+Text-NSP-0.71/Testing/kocos/unit/test-A12.regex
+Text-NSP-0.71/Testing/kocos/unit/test-A12a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A12b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A12c.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A12d.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A13.count
+Text-NSP-0.71/Testing/kocos/unit/test-A13.regex
+Text-NSP-0.71/Testing/kocos/unit/test-A13a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A13b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A13c.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A13d.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A13e.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A14.count
+Text-NSP-0.71/Testing/kocos/unit/test-A14.regex
+Text-NSP-0.71/Testing/kocos/unit/test-A14a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A14b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A14c.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A14d.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A15.count
+Text-NSP-0.71/Testing/kocos/unit/test-A15.regex
+Text-NSP-0.71/Testing/kocos/unit/test-A15a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A15b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A15c.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A16.count
+Text-NSP-0.71/Testing/kocos/unit/test-A16.regex
+Text-NSP-0.71/Testing/kocos/unit/test-A16a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A16b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A16c.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A16d.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A16e.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A17.count
+Text-NSP-0.71/Testing/kocos/unit/test-A17a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A17b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A18.count
+Text-NSP-0.71/Testing/kocos/unit/test-A18.regex
+Text-NSP-0.71/Testing/kocos/unit/test-A18a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A18b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A18c.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A19.count
+Text-NSP-0.71/Testing/kocos/unit/test-A19a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A19b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A1a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A1b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A1c.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A1d.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A2.count
+Text-NSP-0.71/Testing/kocos/unit/test-A2a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A2b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A3.count
+Text-NSP-0.71/Testing/kocos/unit/test-A3a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A3b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A4.count
+Text-NSP-0.71/Testing/kocos/unit/test-A4a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A4b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A4c.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A5.count
+Text-NSP-0.71/Testing/kocos/unit/test-A5a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A5b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A5c.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A6.count
+Text-NSP-0.71/Testing/kocos/unit/test-A6a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A6b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A6c.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A6d.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A7.count
+Text-NSP-0.71/Testing/kocos/unit/test-A7a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A7b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A7c.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A7d.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A7e.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A8.count
+Text-NSP-0.71/Testing/kocos/unit/test-A8.regex
+Text-NSP-0.71/Testing/kocos/unit/test-A8a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A8b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A8c.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A8d.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A9.count
+Text-NSP-0.71/Testing/kocos/unit/test-A9.regex
+Text-NSP-0.71/Testing/kocos/unit/test-A9a.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A9b.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-A9c.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-B1.count
+Text-NSP-0.71/Testing/kocos/unit/test-B1.reqd
+Text-NSP-0.71/Testing/kocos/unit/test-B2.count
+Text-NSP-0.71/Testing/kocos/unit/test-B2.reqd
+Text-NSP-0.71/Testing/kocos/unit/testA10a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA10b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA10c.sh
+Text-NSP-0.71/Testing/kocos/unit/testA10d.sh
+Text-NSP-0.71/Testing/kocos/unit/testA10e.sh
+Text-NSP-0.71/Testing/kocos/unit/testA11a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA11b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA11c.sh
+Text-NSP-0.71/Testing/kocos/unit/testA11d.sh
+Text-NSP-0.71/Testing/kocos/unit/testA12a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA12b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA12c.sh
+Text-NSP-0.71/Testing/kocos/unit/testA12d.sh
+Text-NSP-0.71/Testing/kocos/unit/testA13a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA13b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA13c.sh
+Text-NSP-0.71/Testing/kocos/unit/testA13d.sh
+Text-NSP-0.71/Testing/kocos/unit/testA13e.sh
+Text-NSP-0.71/Testing/kocos/unit/testA14a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA14b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA14c.sh
+Text-NSP-0.71/Testing/kocos/unit/testA14d.sh
+Text-NSP-0.71/Testing/kocos/unit/testA15a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA15b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA15c.sh
+Text-NSP-0.71/Testing/kocos/unit/testA16a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA16b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA16c.sh
+Text-NSP-0.71/Testing/kocos/unit/testA16d.sh
+Text-NSP-0.71/Testing/kocos/unit/testA16e.sh
+Text-NSP-0.71/Testing/kocos/unit/testA17a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA17b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA18a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA18b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA18c.sh
+Text-NSP-0.71/Testing/kocos/unit/testA19a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA19b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA1a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA1b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA1c.sh
+Text-NSP-0.71/Testing/kocos/unit/testA1d.sh
+Text-NSP-0.71/Testing/kocos/unit/testA2a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA2b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA3a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA3b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA4a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA4b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA4c.sh
+Text-NSP-0.71/Testing/kocos/unit/testA5a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA5b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA5c.sh
+Text-NSP-0.71/Testing/kocos/unit/testA6a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA6b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA6c.sh
+Text-NSP-0.71/Testing/kocos/unit/testA6d.sh
+Text-NSP-0.71/Testing/kocos/unit/testA7a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA7b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA7c.sh
+Text-NSP-0.71/Testing/kocos/unit/testA7d.sh
+Text-NSP-0.71/Testing/kocos/unit/testA7e.sh
+Text-NSP-0.71/Testing/kocos/unit/testA8a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA8b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA8c.sh
+Text-NSP-0.71/Testing/kocos/unit/testA8d.sh
+Text-NSP-0.71/Testing/kocos/unit/testA9a.sh
+Text-NSP-0.71/Testing/kocos/unit/testA9b.sh
+Text-NSP-0.71/Testing/kocos/unit/testA9c.sh
+Text-NSP-0.71/Testing/kocos/unit/testB1.sh
+Text-NSP-0.71/Testing/kocos/unit/testB2.sh
+Text-NSP-0.71/Testing/leftFisher/
+Text-NSP-0.71/Testing/leftFisher/normal-op.sh
+Text-NSP-0.71/Testing/leftFisher/README.txt
+Text-NSP-0.71/Testing/leftFisher/error-handling.sh
+Text-NSP-0.71/Testing/leftFisher/test-1.cnt
+Text-NSP-0.71/Testing/leftFisher/test-1.sub-1.cnt
+Text-NSP-0.71/Testing/leftFisher/test-1.sub-1.reqd
+Text-NSP-0.71/Testing/leftFisher/test-1.sub-2.cnt
+Text-NSP-0.71/Testing/leftFisher/test-1.sub-2.reqd
+Text-NSP-0.71/Testing/leftFisher/test-1.sub-2.freq_combo.txt
+Text-NSP-0.71/Testing/leftFisher/test-1.sub-3.cnt
+Text-NSP-0.71/Testing/leftFisher/test-1.sub-3.reqd
+Text-NSP-0.71/Testing/leftFisher/test-1.sub-4.cnt
+Text-NSP-0.71/Testing/leftFisher/test-1.sub-4.error.reqd
+Text-NSP-0.71/Testing/leftFisher/test-1.sub-4.reqd
+Text-NSP-0.71/Testing/leftFisher/test-2.sub-1-a.cnt
+Text-NSP-0.71/Testing/leftFisher/test-2.sub-1-a.reqd
+Text-NSP-0.71/Testing/leftFisher/test-2.sub-1-b.cnt
+Text-NSP-0.71/Testing/leftFisher/test-2.sub-1-b.freq_combo.txt
+Text-NSP-0.71/Testing/leftFisher/test-2.sub-1-b.reqd
+Text-NSP-0.71/Testing/ll3/
+Text-NSP-0.71/Testing/ll3/normal-op.sh
+Text-NSP-0.71/Testing/ll3/README.txt
+Text-NSP-0.71/Testing/ll3/error-handling.sh
+Text-NSP-0.71/Testing/ll3/test-1.cnt
+Text-NSP-0.71/Testing/ll3/test-1.sub-1.cnt
+Text-NSP-0.71/Testing/ll3/test-1.sub-1.reqd
+Text-NSP-0.71/Testing/ll3/test-1.sub-2.cnt
+Text-NSP-0.71/Testing/ll3/test-1.sub-2.reqd
+Text-NSP-0.71/Testing/ll3/test-1.sub-2.freq_combo.txt
+Text-NSP-0.71/Testing/ll3/test-1.sub-3.cnt
+Text-NSP-0.71/Testing/ll3/test-1.sub-3.reqd
+Text-NSP-0.71/Testing/ll3/test-1.sub-4.cnt
+Text-NSP-0.71/Testing/ll3/test-1.sub-4.error.reqd
+Text-NSP-0.71/Testing/ll3/test-1.sub-4.reqd
+Text-NSP-0.71/Testing/ll3/test-2.sub-1-a.cnt
+Text-NSP-0.71/Testing/ll3/test-2.sub-1-a.reqd
+Text-NSP-0.71/Testing/ll3/test-2.sub-1-b.cnt
+Text-NSP-0.71/Testing/ll3/test-2.sub-1-b.freq_combo.txt
+Text-NSP-0.71/Testing/ll3/test-2.sub-1-b.reqd
+Text-NSP-0.71/Testing/odds/
+Text-NSP-0.71/Testing/odds/normal-op.sh
+Text-NSP-0.71/Testing/odds/README.txt
+Text-NSP-0.71/Testing/odds/error-handling.sh
+Text-NSP-0.71/Testing/odds/test-1.cnt
+Text-NSP-0.71/Testing/odds/test-1.sub-1.cnt
+Text-NSP-0.71/Testing/odds/test-1.sub-1.reqd
+Text-NSP-0.71/Testing/odds/test-1.sub-2.cnt
+Text-NSP-0.71/Testing/odds/test-1.sub-2.reqd
+Text-NSP-0.71/Testing/odds/test-1.sub-2.freq_combo.txt
+Text-NSP-0.71/Testing/odds/test-1.sub-3.cnt
+Text-NSP-0.71/Testing/odds/test-1.sub-3.reqd
+Text-NSP-0.71/Testing/odds/test-1.sub-4.cnt
+Text-NSP-0.71/Testing/odds/test-1.sub-4.error.reqd
+Text-NSP-0.71/Testing/odds/test-1.sub-4.reqd
+Text-NSP-0.71/Testing/odds/test-2.sub-1-a.cnt
+Text-NSP-0.71/Testing/odds/test-2.sub-1-a.reqd
+Text-NSP-0.71/Testing/odds/test-2.sub-1-b.cnt
+Text-NSP-0.71/Testing/odds/test-2.sub-1-b.freq_combo.txt
+Text-NSP-0.71/Testing/odds/test-2.sub-1-b.reqd
+Text-NSP-0.71/Testing/phi/
+Text-NSP-0.71/Testing/phi/normal-op.sh
+Text-NSP-0.71/Testing/phi/README.txt
+Text-NSP-0.71/Testing/phi/error-handling.sh
+Text-NSP-0.71/Testing/phi/test-1.cnt
+Text-NSP-0.71/Testing/phi/test-1.sub-1.cnt
+Text-NSP-0.71/Testing/phi/test-1.sub-1.reqd
+Text-NSP-0.71/Testing/phi/test-1.sub-2.cnt
+Text-NSP-0.71/Testing/phi/test-1.sub-2.reqd
+Text-NSP-0.71/Testing/phi/test-1.sub-2.freq_combo.txt
+Text-NSP-0.71/Testing/phi/test-1.sub-3.cnt
+Text-NSP-0.71/Testing/phi/test-1.sub-3.reqd
+Text-NSP-0.71/Testing/phi/test-1.sub-4.cnt
+Text-NSP-0.71/Testing/phi/test-1.sub-4.error.reqd
+Text-NSP-0.71/Testing/phi/test-1.sub-4.reqd
+Text-NSP-0.71/Testing/phi/test-2.sub-1-a.cnt
+Text-NSP-0.71/Testing/phi/test-2.sub-1-a.reqd
+Text-NSP-0.71/Testing/phi/test-2.sub-1-b.cnt
+Text-NSP-0.71/Testing/phi/test-2.sub-1-b.freq_combo.txt
+Text-NSP-0.71/Testing/phi/test-2.sub-1-b.reqd
+Text-NSP-0.71/Testing/pmi/
+Text-NSP-0.71/Testing/pmi/normal-op.sh
+Text-NSP-0.71/Testing/pmi/README.txt
+Text-NSP-0.71/Testing/pmi/error-handling.sh
+Text-NSP-0.71/Testing/pmi/test-1.cnt
+Text-NSP-0.71/Testing/pmi/test-1.sub-1.cnt
+Text-NSP-0.71/Testing/pmi/test-1.sub-1.reqd
+Text-NSP-0.71/Testing/pmi/test-1.sub-2.cnt
+Text-NSP-0.71/Testing/pmi/test-1.sub-2.reqd
+Text-NSP-0.71/Testing/pmi/test-1.sub-2.freq_combo.txt
+Text-NSP-0.71/Testing/pmi/test-1.sub-3.cnt
+Text-NSP-0.71/Testing/pmi/test-1.sub-3.reqd
+Text-NSP-0.71/Testing/pmi/test-1.sub-4.cnt
+Text-NSP-0.71/Testing/pmi/test-1.sub-4.error.reqd
+Text-NSP-0.71/Testing/pmi/test-1.sub-4.reqd
+Text-NSP-0.71/Testing/pmi/test-2.sub-1-a.cnt
+Text-NSP-0.71/Testing/pmi/test-2.sub-1-a.reqd
+Text-NSP-0.71/Testing/pmi/test-2.sub-1-b.cnt
+Text-NSP-0.71/Testing/pmi/test-2.sub-1-b.freq_combo.txt
+Text-NSP-0.71/Testing/pmi/test-2.sub-1-b.reqd
+Text-NSP-0.71/Testing/rank/
+Text-NSP-0.71/Testing/rank/normal-op.sh
+Text-NSP-0.71/Testing/rank/README.txt
+Text-NSP-0.71/Testing/rank/test-1.sub-1-a.reqd
+Text-NSP-0.71/Testing/rank/error-handling.sh
+Text-NSP-0.71/Testing/rank/test-1-1.txt
+Text-NSP-0.71/Testing/rank/test-1-2.txt
+Text-NSP-0.71/Testing/rank/test-1.sub-1-b.reqd
+Text-NSP-0.71/Testing/rank/test-1.sub-1-c.reqd
+Text-NSP-0.71/Testing/rank/test-1.sub-2.reqd
+Text-NSP-0.71/Testing/rank/test-1.sub-3.reqd
+Text-NSP-0.71/Testing/rank/test-1.sub-4a.reqd
+Text-NSP-0.71/Testing/rank/test-1.sub-4b.reqd
+Text-NSP-0.71/Testing/rank/test-1.sub-4c.reqd
+Text-NSP-0.71/Testing/rank/test-1.sub-4d.reqd
+Text-NSP-0.71/Testing/rank/test-1.sub-5.reqd
+Text-NSP-0.71/Testing/rank/test-2-1.txt
+Text-NSP-0.71/Testing/rank/test-2-2.txt
+Text-NSP-0.71/Testing/rank/test-2.sub-1.reqd
+Text-NSP-0.71/Testing/rank/test-2.sub-2.reqd
+Text-NSP-0.71/Testing/rank/test-3-1.txt
+Text-NSP-0.71/Testing/rank/test-3-2.txt
+Text-NSP-0.71/Testing/rank/test-4-1.txt
+Text-NSP-0.71/Testing/rank/test-4-2.txt
+Text-NSP-0.71/Testing/rank/test-5-1.txt
+Text-NSP-0.71/Testing/rank/test-5-2.txt
+Text-NSP-0.71/Testing/rightFisher/
+Text-NSP-0.71/Testing/rightFisher/normal-op.sh
+Text-NSP-0.71/Testing/rightFisher/README.txt
+Text-NSP-0.71/Testing/rightFisher/error-handling.sh
+Text-NSP-0.71/Testing/rightFisher/test-1.cnt
+Text-NSP-0.71/Testing/rightFisher/test-1.sub-1.cnt
+Text-NSP-0.71/Testing/rightFisher/test-1.sub-1.reqd
+Text-NSP-0.71/Testing/rightFisher/test-1.sub-2.cnt
+Text-NSP-0.71/Testing/rightFisher/test-1.sub-2.reqd
+Text-NSP-0.71/Testing/rightFisher/test-1.sub-2.freq_combo.txt
+Text-NSP-0.71/Testing/rightFisher/test-1.sub-3.cnt
+Text-NSP-0.71/Testing/rightFisher/test-1.sub-3.reqd
+Text-NSP-0.71/Testing/rightFisher/test-1.sub-4.cnt
+Text-NSP-0.71/Testing/rightFisher/test-1.sub-4.error.reqd
+Text-NSP-0.71/Testing/rightFisher/test-1.sub-4.reqd
+Text-NSP-0.71/Testing/rightFisher/test-2.sub-1-a.cnt
+Text-NSP-0.71/Testing/rightFisher/test-2.sub-1-a.reqd
+Text-NSP-0.71/Testing/rightFisher/test-2.sub-1-b.cnt
+Text-NSP-0.71/Testing/rightFisher/test-2.sub-1-b.freq_combo.txt
+Text-NSP-0.71/Testing/rightFisher/test-2.sub-1-b.reqd
+Text-NSP-0.71/Testing/sort-bigrams/
+Text-NSP-0.71/Testing/sort-bigrams/normal-op.sh
+Text-NSP-0.71/Testing/sort-bigrams/README.txt
+Text-NSP-0.71/Testing/sort-bigrams/error-handling.sh
+Text-NSP-0.71/Testing/sort-bigrams/test-A1.bigram
+Text-NSP-0.71/Testing/sort-bigrams/test-A1.reqd
+Text-NSP-0.71/Testing/sort-bigrams/test-A2.bigram
+Text-NSP-0.71/Testing/sort-bigrams/test-A2.reqd
+Text-NSP-0.71/Testing/sort-bigrams/test-A3.bigram
+Text-NSP-0.71/Testing/sort-bigrams/test-A3.reqd
+Text-NSP-0.71/Testing/sort-bigrams/test-A4.bigram
+Text-NSP-0.71/Testing/sort-bigrams/test-A4.reqd
+Text-NSP-0.71/Testing/sort-bigrams/test-A5.bigram
+Text-NSP-0.71/Testing/sort-bigrams/test-A5.reqd
+Text-NSP-0.71/Testing/sort-bigrams/test-A61.bigram
+Text-NSP-0.71/Testing/sort-bigrams/test-A61.reqd
+Text-NSP-0.71/Testing/sort-bigrams/test-A62.bigram
+Text-NSP-0.71/Testing/sort-bigrams/test-A62.reqd
+Text-NSP-0.71/Testing/sort-bigrams/test-A63.bigram
+Text-NSP-0.71/Testing/sort-bigrams/test-A63.reqd
+Text-NSP-0.71/Testing/sort-bigrams/test-A71.bigram
+Text-NSP-0.71/Testing/sort-bigrams/test-A71.reqd
+Text-NSP-0.71/Testing/sort-bigrams/test-A72.bigram
+Text-NSP-0.71/Testing/sort-bigrams/test-A72.reqd
+Text-NSP-0.71/Testing/sort-bigrams/test-B1.bigram
+Text-NSP-0.71/Testing/sort-bigrams/test-B1.reqd
+Text-NSP-0.71/Testing/sort-bigrams/testA1.sh
+Text-NSP-0.71/Testing/sort-bigrams/testA2.sh
+Text-NSP-0.71/Testing/sort-bigrams/testA3.sh
+Text-NSP-0.71/Testing/sort-bigrams/testA4.sh
+Text-NSP-0.71/Testing/sort-bigrams/testA5.sh
+Text-NSP-0.71/Testing/sort-bigrams/testA6.sh
+Text-NSP-0.71/Testing/sort-bigrams/testA7.sh
+Text-NSP-0.71/Testing/sort-bigrams/testB1.sh
+Text-NSP-0.71/Testing/split-data/
+Text-NSP-0.71/Testing/split-data/normal-op.sh
+Text-NSP-0.71/Testing/split-data/README.txt
+Text-NSP-0.71/Testing/split-data/error-handling.sh
+Text-NSP-0.71/Testing/split-data/test-A1.data
+Text-NSP-0.71/Testing/split-data/test-A1.data1.reqd
+Text-NSP-0.71/Testing/split-data/test-A1.data2.reqd
+Text-NSP-0.71/Testing/split-data/test-A1.data3.reqd
+Text-NSP-0.71/Testing/split-data/test-A2.data
+Text-NSP-0.71/Testing/split-data/test-A2.data1.reqd
+Text-NSP-0.71/Testing/split-data/test-A2.data2.reqd
+Text-NSP-0.71/Testing/split-data/test-A2.data3.reqd
+Text-NSP-0.71/Testing/split-data/test-A3.data
+Text-NSP-0.71/Testing/split-data/test-A3.data1.reqd
+Text-NSP-0.71/Testing/split-data/test-A4.data
+Text-NSP-0.71/Testing/split-data/test-A4.data1.reqd
+Text-NSP-0.71/Testing/split-data/test-A4.data2.reqd
+Text-NSP-0.71/Testing/split-data/test-A4.data3.reqd
+Text-NSP-0.71/Testing/split-data/test-A4.data4.reqd
+Text-NSP-0.71/Testing/split-data/test-B1.data
+Text-NSP-0.71/Testing/split-data/test-B1.reqd
+Text-NSP-0.71/Testing/split-data/testA1.sh
+Text-NSP-0.71/Testing/split-data/testA2.sh
+Text-NSP-0.71/Testing/split-data/testA3.sh
+Text-NSP-0.71/Testing/split-data/testA4.sh
+Text-NSP-0.71/Testing/split-data/testB1.sh
+Text-NSP-0.71/Testing/statistic/
+Text-NSP-0.71/Testing/statistic/normal-op.sh
+Text-NSP-0.71/Testing/statistic/README.txt
+Text-NSP-0.71/Testing/statistic/t1
+Text-NSP-0.71/Testing/statistic/error-handling.sh
+Text-NSP-0.71/Testing/statistic/t2
+Text-NSP-0.71/Testing/statistic/test_2.pm
+Text-NSP-0.71/Testing/statistic/test-1.pm
+Text-NSP-0.71/Testing/statistic/test-1.sub-1-a.reqd
+Text-NSP-0.71/Testing/statistic/test-1.sub-1-b.reqd
+Text-NSP-0.71/Testing/statistic/test-1.sub-1-c.reqd
+Text-NSP-0.71/Testing/statistic/test-1.sub-1.cnt
+Text-NSP-0.71/Testing/statistic/test-1.sub-2-a.reqd
+Text-NSP-0.71/Testing/statistic/test-1.sub-2-b.reqd
+Text-NSP-0.71/Testing/statistic/test-1.sub-2.cnt
+Text-NSP-0.71/Testing/statistic/test-1.sub-2.freq_combo.txt
+Text-NSP-0.71/Testing/statistic/test-1.sub-3-a.reqd
+Text-NSP-0.71/Testing/statistic/test-1.sub-3-b.reqd
+Text-NSP-0.71/Testing/statistic/test-1.sub-3-c.reqd
+Text-NSP-0.71/Testing/statistic/test-1.sub-3-d.reqd
+Text-NSP-0.71/Testing/statistic/test-1.sub-4-a.reqd
+Text-NSP-0.71/Testing/statistic/test-1.sub-4-b.reqd
+Text-NSP-0.71/Testing/statistic/test-1.sub-5.cnt
+Text-NSP-0.71/Testing/statistic/test-1.sub-5.freq_comb.txt
+Text-NSP-0.71/Testing/statistic/test-1.sub-5.reqd
+Text-NSP-0.71/Testing/statistic/test-1.sub-6.cnt
+Text-NSP-0.71/Testing/statistic/test-1.sub-6.reqd
+Text-NSP-0.71/Testing/statistic/test-2.sub-1-a.cnt
+Text-NSP-0.71/Testing/statistic/test-2.sub-1-a.freq_combo.txt
+Text-NSP-0.71/Testing/statistic/test-2.sub-1-a.reqd
+Text-NSP-0.71/Testing/statistic/test-2.sub-2-a.reqd
+Text-NSP-0.71/Testing/statistic/test-2.sub-2-b.reqd
+Text-NSP-0.71/Testing/statistic/test-2.sub-2.cnt
+Text-NSP-0.71/Testing/statistic/test-2.sub-3-a.reqd
+Text-NSP-0.71/Testing/statistic/test-2.sub-3-b.reqd
+Text-NSP-0.71/Testing/statistic/test-2.sub-4-a.reqd
+Text-NSP-0.71/Testing/statistic/test-2.sub-4-b.reqd
+Text-NSP-0.71/Testing/statistic/test-2.sub-4-c.reqd
+Text-NSP-0.71/Testing/statistic/test-2.sub-5-a.reqd
+Text-NSP-0.71/Testing/statistic/test-2.sub-5-b.reqd
+Text-NSP-0.71/Testing/statistic/test-2.sub-6.reqd
+Text-NSP-0.71/Testing/statistic/test-2.sub-7-a.reqd
+Text-NSP-0.71/Testing/statistic/test-2.sub-7-b.reqd
+Text-NSP-0.71/Testing/statistic/test-2.sub-7.cnt
+Text-NSP-0.71/Testing/statistic/test_1_sub_3_a.pm
+Text-NSP-0.71/Testing/statistic/test_1_sub_3_b.pm
+Text-NSP-0.71/Testing/statistic/test_1_sub_3_c.pm
+Text-NSP-0.71/Testing/statistic/test_1_sub_3_d.pm
+Text-NSP-0.71/Testing/tmi/
+Text-NSP-0.71/Testing/tmi/normal-op.sh
+Text-NSP-0.71/Testing/tmi/README.txt
+Text-NSP-0.71/Testing/tmi/error-handling.sh
+Text-NSP-0.71/Testing/tmi/test-1.cnt
+Text-NSP-0.71/Testing/tmi/test-1.sub-1.cnt
+Text-NSP-0.71/Testing/tmi/test-1.sub-1.reqd
+Text-NSP-0.71/Testing/tmi/test-1.sub-2.cnt
+Text-NSP-0.71/Testing/tmi/test-1.sub-2.reqd
+Text-NSP-0.71/Testing/tmi/test-1.sub-2.freq_combo.txt
+Text-NSP-0.71/Testing/tmi/test-1.sub-3.cnt
+Text-NSP-0.71/Testing/tmi/test-1.sub-3.reqd
+Text-NSP-0.71/Testing/tmi/test-1.sub-4.cnt
+Text-NSP-0.71/Testing/tmi/test-1.sub-4.error.reqd
+Text-NSP-0.71/Testing/tmi/test-1.sub-4.reqd
+Text-NSP-0.71/Testing/tmi/test-2.sub-1-a.cnt
+Text-NSP-0.71/Testing/tmi/test-2.sub-1-a.reqd
+Text-NSP-0.71/Testing/tmi/test-2.sub-1-b.cnt
+Text-NSP-0.71/Testing/tmi/test-2.sub-1-b.freq_combo.txt
+Text-NSP-0.71/Testing/tmi/test-2.sub-1-b.reqd
+Text-NSP-0.71/Testing/tmi3/
+Text-NSP-0.71/Testing/tmi3/normal-op.sh
+Text-NSP-0.71/Testing/tmi3/README.txt
+Text-NSP-0.71/Testing/tmi3/error-handling.sh
+Text-NSP-0.71/Testing/tmi3/test-1.cnt
+Text-NSP-0.71/Testing/tmi3/test-1.sub-1.cnt
+Text-NSP-0.71/Testing/tmi3/test-1.sub-1.reqd
+Text-NSP-0.71/Testing/tmi3/test-1.sub-2.cnt
+Text-NSP-0.71/Testing/tmi3/test-1.sub-2.reqd
+Text-NSP-0.71/Testing/tmi3/test-1.sub-2.freq_combo.txt
+Text-NSP-0.71/Testing/tmi3/test-1.sub-3.cnt
+Text-NSP-0.71/Testing/tmi3/test-1.sub-3.reqd
+Text-NSP-0.71/Testing/tmi3/test-1.sub-4.cnt
+Text-NSP-0.71/Testing/tmi3/test-1.sub-4.error.reqd
+Text-NSP-0.71/Testing/tmi3/test-1.sub-4.reqd
+Text-NSP-0.71/Testing/tmi3/test-2.sub-1-a.cnt
+Text-NSP-0.71/Testing/tmi3/test-2.sub-1-a.reqd
+Text-NSP-0.71/Testing/tmi3/test-2.sub-1-b.cnt
+Text-NSP-0.71/Testing/tmi3/test-2.sub-1-b.freq_combo.txt
+Text-NSP-0.71/Testing/tmi3/test-2.sub-1-b.reqd
+Text-NSP-0.71/Testing/tmi3/test-3.sub-1-a.cnt
+Text-NSP-0.71/Testing/tmi3/test-3.sub-1-a.reqd
+Text-NSP-0.71/Testing/tscore/
+Text-NSP-0.71/Testing/tscore/normal-op.sh
+Text-NSP-0.71/Testing/tscore/README.txt
+Text-NSP-0.71/Testing/tscore/error-handling.sh
+Text-NSP-0.71/Testing/tscore/test-1.cnt
+Text-NSP-0.71/Testing/tscore/test-1.sub-1.cnt
+Text-NSP-0.71/Testing/tscore/test-1.sub-1.reqd
+Text-NSP-0.71/Testing/tscore/test-1.sub-2.cnt
+Text-NSP-0.71/Testing/tscore/test-1.sub-2.reqd
+Text-NSP-0.71/Testing/tscore/test-1.sub-2.freq_combo.txt
+Text-NSP-0.71/Testing/tscore/test-1.sub-3.cnt
+Text-NSP-0.71/Testing/tscore/test-1.sub-3.reqd
+Text-NSP-0.71/Testing/tscore/test-1.sub-4.cnt
+Text-NSP-0.71/Testing/tscore/test-1.sub-4.error.reqd
+Text-NSP-0.71/Testing/tscore/test-1.sub-4.reqd
+Text-NSP-0.71/Testing/tscore/test-2.sub-1-a.cnt
+Text-NSP-0.71/Testing/tscore/test-2.sub-1-a.reqd
+Text-NSP-0.71/Testing/tscore/test-2.sub-1-b.cnt
+Text-NSP-0.71/Testing/tscore/test-2.sub-1-b.freq_combo.txt
+Text-NSP-0.71/Testing/tscore/test-2.sub-1-b.reqd
+Text-NSP-0.71/Testing/x2/
+Text-NSP-0.71/Testing/x2/normal-op.sh
+Text-NSP-0.71/Testing/x2/README.txt
+Text-NSP-0.71/Testing/x2/error-handling.sh
+Text-NSP-0.71/Testing/x2/test-1.cnt
+Text-NSP-0.71/Testing/x2/test-1.sub-1.cnt
+Text-NSP-0.71/Testing/x2/test-1.sub-1.reqd
+Text-NSP-0.71/Testing/x2/test-1.sub-2.cnt
+Text-NSP-0.71/Testing/x2/test-1.sub-2.reqd
+Text-NSP-0.71/Testing/x2/test-1.sub-2.freq_combo.txt
+Text-NSP-0.71/Testing/x2/test-1.sub-3.cnt
+Text-NSP-0.71/Testing/x2/test-1.sub-3.reqd
+Text-NSP-0.71/Testing/x2/test-1.sub-4.cnt
+Text-NSP-0.71/Testing/x2/test-1.sub-4.error.reqd
+Text-NSP-0.71/Testing/x2/test-1.sub-4.reqd
+Text-NSP-0.71/Testing/x2/test-2.sub-1-a.cnt
+Text-NSP-0.71/Testing/x2/test-2.sub-1-a.reqd
+Text-NSP-0.71/Testing/x2/test-2.sub-1-b.cnt
+Text-NSP-0.71/Testing/x2/test-2.sub-1-b.freq_combo.txt
+Text-NSP-0.71/Testing/x2/test-2.sub-1-b.reqd
+Text-NSP-0.71/Utils/
+Text-NSP-0.71/Utils/combig-script.sh
+Text-NSP-0.71/Utils/combig.pl
+Text-NSP-0.71/Utils/huge-combine.pl
+Text-NSP-0.71/Utils/huge-count.pl
+Text-NSP-0.71/Utils/kocos-script.sh
+Text-NSP-0.71/Utils/kocos.pl
+Text-NSP-0.71/Utils/rank-script.sh
+Text-NSP-0.71/Utils/rank.pl
+Text-NSP-0.71/Utils/sort-bigrams.pl
+Text-NSP-0.71/Utils/split-data.pl
+Text-NSP-0.71/t/
+Text-NSP-0.71/t/1.t
+dpkg-buildpackage: source package is text-nsp-perl
+dpkg-buildpackage: source version is 0.71-1
+dpkg-buildpackage: source maintainer is Andrew Dougherty &lt;ajd@frdcsa.dyndns.org>
+dpkg-buildpackage: host architecture is i386
+ fakeroot debian/rules clean
+dh_testdir
+dh_testroot
+rm -f build-stamp
+# Add here commands to clean up after the build process.</font>
+<font color="000000">dh_clean
+ dpkg-source -b text-nsp-perl-0.71
+dpkg-source: building text-nsp-perl in text-nsp-perl_0.71.orig.tar.gz
+dpkg-source: building text-nsp-perl in text-nsp-perl_0.71-1.diff.gz
+dpkg-source: building text-nsp-perl in text-nsp-perl_0.71-1.dsc
+ debian/rules build
+dh_testdir
+/usr/bin/perl Makefile.PL INSTALLDIRS=vendor
+Checking if your kit is complete...</font>
+<font color="000000">Looks good
+#################################################################
+ You are running Makefile.PL. When this finishes, remember that you
+ will also need to run the following to finish the install of NSP:</font>
+<font color="000000">make
+        make test
+        make install</font>
+<font color="000000">if "make install" fails and indicates that you don't have proper
+ permissions to install, you <a href="http://frdcsa.org/frdcsa/internal/do/index.html">do</a> have the option to install NSP in
+ a local directory of your own choosing.</font>
+<font color="000000">You can <a href="http://frdcsa.org/frdcsa/internal/do/index.html">do</a> this as follows:</font>
+<font color="000000">perl Makefile.PL PREFIX=/MYDIR/NSP
+        make
+        make test
+        make install</font>
+<font color="000000">where /MYDIR is a directory that you own and can write to, and
+ NSP is a new subdirectory.</font>
+<font color="000000">(The name NSP is not required, it
+ can be anything)</font>
+<font color="000000">After <a href="http://frdcsa.org/frdcsa/internal/all/index.html">all</a> this is done, you can run "make clean" to remove some
+ of the files created during installation
+#################################################################
+Writing Makefile for Text::NSP
+if ! grep ^install_vendor Makefile >/dev/null; then \
+	/usr/bin/make clean; \
+	/usr/bin/perl Makefile.PL INSTALLDIRS=perl INSTALLMAN1DIR=/var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man1 INSTALLMAN3DIR=/var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man3 INSTALLPRIVLIB=/var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/lib/perl5 INSTALLARCHLIB=/var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/lib/perl/5.8 INSTALLBIN=/var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/bin INSTALLSCRIPT=/var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/bin &lt;/dev/null; \
+fi
+/usr/bin/make OPTIMIZE="-O2 -g -Wall"
+make[1]: Entering directory `/var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71'
+cp Measures/pmi.pm blib/lib/pmi.pm
+cp Measures/rightFisher.pm blib/lib/rightFisher.pm
+cp Measures/tmi3.pm blib/lib/tmi3.pm
+cp Measures/measure3d.pm blib/lib/measure3d.pm
+cp Measures/odds.pm blib/lib/odds.pm
+cp Measures/ll3.pm blib/lib/ll3.pm
+cp Measures/ll.pm blib/lib/ll.pm
+cp Measures/dice.pm blib/lib/dice.pm
+cp NSP.pm blib/lib/Text/NSP.pm
+AutoSplitting blib/lib/Text/NSP.pm (blib/lib/auto/Text/NSP)
+cp Measures/x2.pm blib/lib/x2.pm
+cp Measures/measure2d.pm blib/lib/measure2d.pm
+cp Measures/leftFisher.pm blib/lib/leftFisher.pm
+cp Measures/phi.pm blib/lib/phi.pm
+cp Measures/tmi.pm blib/lib/tmi.pm
+cp Measures/tscore.pm blib/lib/tscore.pm
+cp statistic.pl blib/script/statistic.pl
+/usr/bin/perl "-MExtUtils::MY" -e "MY->fixin(shift)" blib/script/statistic.pl
+cp Utils/split-data.pl blib/script/split-data.pl
+/usr/bin/perl "-MExtUtils::MY" -e "MY->fixin(shift)" blib/script/split-data.pl
+cp Utils/combig-script.sh blib/script/combig-script.sh
+/usr/bin/perl "-MExtUtils::MY" -e "MY->fixin(shift)" blib/script/combig-script.sh
+cp Utils/huge-count.pl blib/script/huge-count.pl
+/usr/bin/perl "-MExtUtils::MY" -e "MY->fixin(shift)" blib/script/huge-count.pl
+cp Utils/rank-script.sh blib/script/rank-script.sh
+/usr/bin/perl "-MExtUtils::MY" -e "MY->fixin(shift)" blib/script/rank-script.sh
+cp Utils/kocos.pl blib/script/kocos.pl
+/usr/bin/perl "-MExtUtils::MY" -e "MY->fixin(shift)" blib/script/kocos.pl
+cp Utils/huge-combine.pl blib/script/huge-combine.pl
+/usr/bin/perl "-MExtUtils::MY" -e "MY->fixin(shift)" blib/script/huge-combine.pl
+cp count.pl blib/script/count.pl
+/usr/bin/perl "-MExtUtils::MY" -e "MY->fixin(shift)" blib/script/count.pl
+cp Utils/rank.pl blib/script/rank.pl
+/usr/bin/perl "-MExtUtils::MY" -e "MY->fixin(shift)" blib/script/rank.pl
+cp Utils/kocos-script.sh blib/script/kocos-script.sh
+/usr/bin/perl "-MExtUtils::MY" -e "MY->fixin(shift)" blib/script/kocos-script.sh
+cp Utils/combig.pl blib/script/combig.pl
+/usr/bin/perl "-MExtUtils::MY" -e "MY->fixin(shift)" blib/script/combig.pl
+cp Utils/sort-bigrams.pl blib/script/sort-bigrams.pl
+/usr/bin/perl "-MExtUtils::MY" -e "MY->fixin(shift)" blib/script/sort-bigrams.pl
+Manifying blib/man1/statistic.pl.1p
+Manifying blib/man1/split-data.pl.1p
+Manifying blib/man1/huge-count.pl.1p
+Manifying blib/man1/kocos.pl.1p
+Manifying blib/man1/huge-combine.pl.1p
+Manifying blib/man1/count.pl.1p
+Manifying blib/man1/rank.pl.1p
+Manifying blib/man1/combig.pl.1p
+Manifying blib/man1/sort-bigrams.pl.1p
+Manifying blib/man3/pmi.3
+Manifying blib/man3/rightFisher.3
+Manifying blib/man3/measure3d.3
+Manifying blib/man3/tmi3.3
+Manifying blib/man3/odds.3
+Manifying blib/man3/ll3.3
+Manifying blib/man3/ll.3
+Manifying blib/man3/dice.3
+Manifying blib/man3/x2.3
+Manifying blib/man3/measure2d.3
+Manifying blib/man3/leftFisher.3
+Manifying blib/man3/tmi.3
+Manifying blib/man3/phi.3
+Manifying blib/man3/tscore.3
+make[1]: Leaving directory `/var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71'
+touch build-stamp
+ fakeroot debian/rules binary
+dh_testdir
+dh_testroot
+dh_clean -k
+dh_installdirs
+if grep ^install_vendor Makefile; then \
+	/usr/bin/make install PREFIX=/var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr; \
+else \
+	/usr/bin/make pure_install DESTDIR=/var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp; \
+fi
+install_vendor :: <a href="http://frdcsa.org/frdcsa/internal/all/index.html">all</a> pure_vendor_install doc_vendor_install
+make[1]: Entering directory `/var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71'
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/perl5/pmi.pm
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/perl5/rightFisher.pm
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/perl5/tmi3.pm
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/perl5/measure3d.pm
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/perl5/odds.pm
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/perl5/ll3.pm
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/perl5/ll.pm
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/perl5/dice.pm
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/perl5/x2.pm
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/perl5/measure2d.pm
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/perl5/leftFisher.pm
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/perl5/phi.pm
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/perl5/tmi.pm
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/perl5/tscore.pm
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/perl5/Text/NSP.pm
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/perl5/auto/Text/NSP/autosplit.ix
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man1/statistic.pl.1p
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man1/split-data.pl.1p
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man1/huge-count.pl.1p
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man1/kocos.pl.1p
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man1/huge-combine.pl.1p
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man1/count.pl.1p
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man1/rank.pl.1p
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man1/combig.pl.1p
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man1/sort-bigrams.pl.1p
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man3/pmi.3
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man3/rightFisher.3
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man3/measure3d.3
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man3/tmi3.3
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man3/odds.3
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man3/ll3.3
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man3/ll.3
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man3/dice.3
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man3/x2.3
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man3/measure2d.3
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man3/leftFisher.3
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man3/tmi.3
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man3/phi.3
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/share/man/man3/tscore.3
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/bin/statistic.pl
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/bin/split-data.pl
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/bin/combig-script.sh
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/bin/huge-count.pl
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/bin/rank-script.sh
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/bin/kocos.pl
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/bin/huge-combine.pl
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/bin/count.pl
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/bin/rank.pl
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/bin/kocos-script.sh
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/bin/combig.pl
+Installing /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/bin/sort-bigrams.pl
+*****************************************************
+Installing the Ngram Statistics Package, V 0.71...</font>
+<font color="000000">...into /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/local (/doc /bin /lib /man) 
+Make sure that the following are in your PATH:
+     /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/local/bin
+     /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/local/share/perl/5.8.4
+After your paths are set, run Testing/<a href="http://frdcsa.org/frdcsa/internal/all/index.html">all</a>-TESTS.sh to
+verify that installation is ok
+*****************************************************
+Installing measures documentation in /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/local/doc/html
+Installing program documentation in /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/local/doc/html
+Installing general documentation in /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/local/doc/html
+Installing man page documentation in /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/local/man/man3
+Installing pod documentation in /var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71/debian/tmp/usr/local/doc/pod
+make[1]: Leaving directory `/var/tmp/debaux-root/text-nsp-perl/text-nsp-perl-0.71'
+dh_testdir
+dh_testroot
+dh_installdocs
+dh_installexamples
+dh_installmenu
+dh_installcron
+dh_installmanpages
+dh_installinfo
+dh_installchangelogs 
+dh_link
+dh_strip
+dh_compress
+dh_fixperms
+dh_installdeb
+dh_perl
+dh_shlibdeps
+dh_gencontrol
+dh_md5sums
+dh_builddeb
+dpkg-deb: building package `libtext-nsp-perl' in `../libtext-nsp-perl_0.71-1_i386.deb'.</font>
+<font color="000000">dpkg-genchanges
+dpkg-genchanges: including full source code in upload
+dpkg-buildpackage: full upload (original source is included)
+child exited with value 0
+Command: sudo dpkg -i /var/tmp/debaux-root/text-nsp-perl/libtext-nsp-perl_0.71-1_i386.deb
+Selecting previously deselected package libtext-nsp-perl.</font>
+<font color="000000">(Reading database ...</font>
+<font color="000000">289068 files and directories currently installed.)</font>
+<font color="000000">Unpacking libtext-nsp-perl (from .../libtext-nsp-perl_0.71-1_i386.deb) ...</font>
+<font color="000000">Setting up libtext-nsp-perl (0.71-1) ...</font>
+<font color="000000">child exited with value 0
+/var/lib/<a href="http://frdcsa.org/frdcsa/internal/myfrdcsa/index.html">myfrdcsa</a>/codebases/data/frdcsa-perl $
+</pre>
+  </long-description></font></font></p><p><font face="Arial, Helvetica, 'Sans Serif'"><a name="personnel"></a><table width="100%" cellpadding="3" cellspacing="0" border="0">
+<tbody><tr valign="top" bgcolor="#cccccc">
+<td><font face="Arial, Helvetica, 'Sans Serif'"><b>Capabilities</b></font></td>
+</tr></tbody></table></font></p><p>
+
+<ul><li><font color="000000">Add the ability to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>-web-search to download the containing webpages as well as the links themselves.</font>
+<font color="000000">Add the ability to have <a href="http://frdcsa.org/frdcsa/internal/kbfs/index.html">kbfs</a> index the items (MD5 sum etc), assert metadata (such as where they were downloaded from, and for what search).</font>
+<font color="000000">Have the ability to check if a given item has already been downloaded for another search.</font></li>
+<li><font color="000000">add something to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>-web-search to have it automatically move completed files into the appropriate directories.</font></li>
+<li><font color="000000">Add to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> and <a href="http://frdcsa.org/frdcsa/internal/packager/index.html">packager</a> the ability to deal with individual files instead of packages, such as http://www.cs.toronto.edu/cogrobo/Systems/golog_swi.pl.</font></li>
+<li><font color="000000">Add git support to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a></font></li>
+<li><font color="000000">Add the ability to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> to check out packages from svn, etc, and store the locations.</font></li>
+<li><font color="000000">Fix the <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> code for downloading software.</font></li>
+<li><font color="000000">Help Haydee set up her <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> system for tracking hollywood production information and leads relating to job acquisition.</font></li>
+<li><font color="000000">Add dataset methods to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>/<a href="http://frdcsa.org/frdcsa/internal/packager/index.html">packager</a></font></li>
+<li><font color="000000">Add GIT to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> methods</font></li>
+<li><font color="000000">Fix the setup for <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>-web-search -p, as if you try to download multiple items, you can't put them together, as we can elsewhere with <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>.</font></li>
+<li><font color="000000">Figure out what to <a href="http://frdcsa.org/frdcsa/internal/do/index.html">do</a> for <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>-web-search if touch fails, probably just add a timeout</font></li>
+<li><font color="000000">Update <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>::method::freshmeat to when there is no direct link, analyze a the homepage</font>
+<table>
+<tr><td width="25"></td><td>(&quot;due-date-for-entry&quot; &quot;106282&quot; &quot;6 days&quot;)</td></tr>
+</table></li>
+<li><font color="000000">Set it up so that <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>-web-search also triggers a raiders-of-the-ftp-site search</font></li>
+<li><font color="000000">Make an effort to automate <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>.</font></li>
+<li><font color="000000">Find that page of useful papers, and process them <a href="http://frdcsa.org/frdcsa/internal/all/index.html">all</a> for links, and run links through <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> to find software</font></li>
+<li><font color="000000">Fix problem with <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> sourceforge failing, have it retry</font></li>
+<li><font color="000000">predator/sorcerer/<a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> should remember if it has looked for some item before and whether it worked (so we don't keep trying the same sites without modulation of our strategy)</font></li>
+<li><font color="000000">Figure out what the problem with the decision tree for <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> when you have to delete the elements.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> should say whether there was a project site or whether it just didn't find any links when there was one.</font></li>
+<li><font color="000000">Should have a command for telling <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> where you found something after the fact.</font></li>
+<li><font color="000000">try to have <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> automatically detect when there are multiple systems to a single page.</font></li>
+<li><font color="000000">Check out if .<a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> files are still being left!</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> should be able to get things from cvs.</font></li>
+<li><font color="000000">Should have URL references to projects - we can start to extract this from the .<a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> files for now.</font></li>
+<li><font color="000000">Some things to fix: (apt-utils-show-package \C-rd), as well as make it so <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> checks to see if something is installed, available, etc.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> install for Perl modules should offer to upload the package into the central repository.</font></li>
+<li><font color="000000">Add CVS to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a></font></li>
+<li><font color="000000">Develop a <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> queue, so that we can queue downloads for later when we have bandwidth.</font></li>
+<li><font color="000000">Fix problem with <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> sourceforge urls</font></li>
+<li><font color="000000">Fix <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> to support automatic figuring out (testing whether the system is available in various archives (that is not to say that it in't something simply because it is not in the archives.))</font></li>
+<li><font color="000000">Add functionality to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> or something to upload code to CPAN.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> should point out if something is not found</font></li>
+<li><font color="000000">Allow forcing of methods using <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>.</font></li>
+<li><font color="000000">Note that currently <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> won't install Sys::Manage, but will install Sys::Manage::Conn which is really sys::manage, so we need to figure out why and fix that.</font></li>
+<li><font color="000000">Add code to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> to allow it to auto select the most recent versions of files.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> should support creating multiple projects for a single page.</font></li>
+<li><font color="000000">Add the ability to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> perl to prequeue predependencies.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> should support becoming root if necessary.</font></li>
+<li><font color="000000">obviously the <a href="http://frdcsa.org/frdcsa/internal/learner/index.html">learner</a> to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> must take into account the arguments as well as the search term for learning</font></li>
+<li><font color="000000">Maybe <a href="http://frdcsa.org/frdcsa/internal/seeker/index.html">seeker</a> should actually handle requests for software, and utilize <a href="http://frdcsa.org/frdcsa/internal/cso/index.html">cso</a>, <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>, etc.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/bard/index.html">bard</a>'s acronym stuff should support trying to fill in an acronym, e.g. <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a></font></li>
+<li><font color="000000">http://search.cpan.org/recent very useful to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>, <a href="http://frdcsa.org/frdcsa/internal/architect/index.html">architect</a>, etc.  Give most recent perl packages per day, lots.</font></li>
+<li><font color="000000">Make this from the <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> or predator script get dependencies run on <a href="http://frdcsa.org/frdcsa/internal/all/index.html">all</a> the <a href="http://frdcsa.org/frdcsa/internal/boss/index.html">boss</a> codebases.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> should log <a href="http://frdcsa.org/frdcsa/internal/all/index.html">all</a> queries.</font></li>
+<li><font color="000000">Integrate <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> with <a href="http://frdcsa.org/frdcsa/internal/cso/index.html">cso</a>, so it can narrow down the choices...</font></li>
+<li><font color="000000">Perhaps have the <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> jump <a href="http://frdcsa.org/frdcsa/internal/corpus/index.html">corpus</a> -s feature not show up upon recent repeated jumps to the same place</font></li>
+<li><font color="000000">Use <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>-items.dat to get a list of software websites that can be used to enlarge the dataset for system-ie</font></li>
+<li><font color="000000">Make <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>-web-search multi-threaded</font></li>
+<li><font color="000000">Fix <a href="http://frdcsa.org/frdcsa/internal/packager/index.html">packager</a> being called two times after <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> (0 2)</font></li>
+<li><font color="000000">Incorporate in <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> the ability to index datasets.</font></li>
+<li><font color="000000">Figure out what happened to my changes to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>-web-search</font>
+<table>
+<tr><td width="25"></td><td>(&quot;completed&quot; &quot;75535&quot;)</td></tr>
+</table></li>
+<li><font color="000000">Move <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>-something.dat to the data dir.</font></li>
+<li><font color="000000">There is a problem with <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>::Method::Sourceforge</font>
+<table>
+<tr><td width="25"></td><td>(&quot;completed&quot; &quot;75323&quot;)</td></tr>
+</table></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> http://en.wikipedia.org/wiki/List_of_free_software_project_directories</font></li>
+<li><font color="000000">Get <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> packaged and ready to go.</font></li>
+<li><font color="000000">Add dataset to the types of things that <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> can download</font></li>
+<li><font color="000000">Try implementing <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> using spark.</font></li>
+<li><font color="000000">Get <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>-web-search to <a href="http://frdcsa.org/frdcsa/internal/do/index.html">do</a> multi-threaded downloading.</font></li>
+<li><font color="000000">Add support to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> for downloading debs.</font></li>
+<li><font color="000000">Maybe set up a learning approach to finding download links in <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>-web-search</font></li>
+<li><font color="000000">Add <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> support for CPANPLUS::Dist::Deb</font>
+<table>
+<tr><td width="25"></td><td>(&quot;completed&quot; &quot;45507&quot;)</td></tr>
+</table></li>
+<li><font color="000000">Add <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> support for ?CPANPlus::Deb?</font>
+<table>
+<tr><td width="25"></td><td>(&quot;unilang-message-classify&quot; &quot;45505&quot; &quot;deleted&quot;)</td></tr>
+</table></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> will eventually depend on: cpan-libcpanplus-perl cpan-libcpanplus-dist-build-perl cpan-libcpanplus-dist-deb-perl</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> should look for cpan-libX-perl packages in addition to libX-perl packages if it has that debian cpan repo in the sources.list</font></li>
+<li><font color="000000">Add datasets to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> directory completion</font>
+<table>
+<tr><td width="25"></td><td>(&quot;completed&quot; &quot;33678&quot;)</td></tr>
+</table></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>: automatically detect datasets and move them to the dataset dir</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>: for SF projects we can check what OS they are for, and if in the case of windows a binary is not available, we can skip it</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>: for a download of the source, check that it is not w32 or something</font></li>
+<li><font color="000000">Note that in the case of opennlp on sourceforge some files remained hidden from <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>, namely the models file.</font></li>
+<li><font color="000000">Fix bug where <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> thinks something is a directory but it isn't.</font></li>
+<li><font color="000000">Have <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> correctly process stuff like stanford-ner-2007-11-05</font></li>
+<li><font color="000000">Get <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>-queue-system to work differently, instead inserting into <a href="http://frdcsa.org/frdcsa/internal/freekbs/index.html">freekbs</a>, and then having the system periodically prompt to download these.</font>
+<font color="000000">That task can come up under the task <a href="http://frdcsa.org/frdcsa/internal/manager/index.html">manager</a> frequently</font></li>
+<li><font color="000000">Fix problem with <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> not getting the latest version of tagextract from sourceforge.</font>
+<table>
+<tr><td width="25"></td><td>(&quot;completed&quot; &quot;27170&quot;)</td></tr>
+</table></li>
+<li><font color="000000">Add launchpad (bazaar) to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>.</font></li>
+<li><font color="000000">Integrate Subversion repository support for <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> needs to be able to handle subversion</font>
+<table>
+<tr><td width="25"></td><td>(&quot;completed&quot; &quot;18061&quot;)</td></tr>
+</table></li>
+<li><font color="000000">Add <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> code for handling code.google.com</font>
+<table>
+<tr><td width="25"></td><td>(&quot;same-as&quot; &quot;16809&quot; &quot;13138&quot;)</td></tr>
+</table></li>
+<li><font color="000000">Add a feature to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> to be able collect datasets separately from systems?</font></li>
+<li><font color="000000">Add googlecode to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> sources</font>
+<table>
+<tr><td width="25"></td><td>(&quot;same-as&quot; &quot;16809&quot; &quot;13138&quot;)</td></tr><tr><td width="25"></td><td>(&quot;completed&quot; &quot;13138&quot;)</td></tr>
+</table></li>
+<li><font color="000000">Configure <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> to insert entries into <a href="http://frdcsa.org/frdcsa/internal/cso/index.html">cso</a> when they are added.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> should compute prerequisites before attempting to build.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> should be able to force installation from a particular platform</font></li>
+<li><font color="000000">sudo <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> remove Gnome2 -> doesn't remove the gnome2 debian package or clean the cpan build stuff when both are installed.</font></li>
+<li><font color="000000">When packaging certain types of applications, it may be necessary to retrieve certain types of files.</font>
+<font color="000000">This mapping should be learnt.</font>
+<font color="000000">We should record which files we are not saving as well in the .<a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> files.</font></li>
+<li><font color="000000">I just realized that <a href="http://frdcsa.org/frdcsa/internal/audience/index.html">audience</a> is really like CMU's <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> should debtags items when they are being downloaded - automatically classifying some of the items, and then letting the user subsetselect them</font></li>
+<li><font color="000000">"<a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> homepage tabari" prints out http://www.ku.edu/~keds/software.dir/tabari.html</font></li>
+<li><font color="000000">Should probably have <a href="http://frdcsa.org/frdcsa/internal/all/index.html">all</a> licenses manually verified - with information helpfully provided by <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>/predator.</font>
+<table>
+<tr><td width="25"></td><td>(&quot;depends&quot; &quot;3689&quot; &quot;45777&quot;)</td></tr><tr><td width="25"></td><td>(&quot;comment&quot; &quot;3689&quot; &quot;Use fossology for this.&quot;)</td></tr>
+</table></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> might need to load the existing .<a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> file when adding items to an existing directory</font></li>
+<li><font color="000000">Need to start listing major features of different systems.</font>
+<font color="000000">For instance, it should be listed on <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>, through capabilities management that it handles perl modules and scripts the way it does.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> should have a give me the name format: i.e. <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> --name webstructor http://www.webstructor.net/worlds/vm.jar</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> doesn't install perl module dependencies correctly.</font></li>
+<li><font color="000000">Note that <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> appears to check CPAN before it even checks apt-get for perl modules, this is suboptimal.</font></li>
+<li><font color="000000">Both <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> and Predator should save information about what they are doing in the directories of systems they have downloaded.</font></li>
+<li><font color="000000">Basically <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>, only applied to people?</font></li>
+<li><font color="000000">I can have <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> and predator record everytime they make a package so we can even calibrate on how <a href="http://frdcsa.org/frdcsa/internal/all/index.html">all</a> events affect one another.</font></li>
+<li><font color="000000">Need to have <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> output somekind of metadata for the external codebases, including url, etc, so that we stop losing information.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> needs to be developed so that it can also try to lookup various components.</font>
+<font color="000000">To be honest, why don't I write <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> as an NPDDL tonight, perhaps before or after I get <a href="http://frdcsa.org/frdcsa/internal/manager/index.html">manager</a> doing that sleep learning stuff.</font>
+<font color="000000">Justin could use that sleep learning stuff.</font></li>
+<li><font color="000000">Fix bug with <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>::Perl that creates a module under the name of a submodule.</font></li>
+<li><font color="000000">I'm using <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> to install a module it depends on.</font></li>
+<li><font color="000000">Here is a good example for Justin.</font>
+<font color="000000">A screen saver pops up saying the number of hectares of tropical rainforest remaining, and it is counting down.</font>
+<font color="000000">You could say that there is a satellite network that uses <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> imaging to compute a real time estimate and that this is broadcast to a server which these screensavers listen to, or you say that they glean this info from some rough statistics.</font></li>
+<li><font color="000000">Need to write email to Bryan Klimt about ???</font>
+<font color="000000">Show him my project, also ask him about <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> and Javelin.</font></li>
+<li><font color="000000">Here is a somewhat new idea: Use <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> to come up with a list of probable candidates for a given software systems homepage and/or related pages.</font>
+<font color="000000">Then, have the user verify this correspendence.</font>
+<font color="000000">Then, implement a classifier, such as the one from WebKB, that determines whether a given page is a homepage or not.</font>
+<font color="000000">This will be important with our webspider.</font>
+<font color="000000">The user can also manually review this webspider's results for further clarification.</font>
+<font color="000000">Lastly, software should then be automatically downloaded and ontologies populated with values mined from the software, its documentation and webpages.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> azureus bom waste dpatoolkit aistockbot programe j-alice yale openpnl jcaptcha vhypno ecell care2002 bioera patientrunner biosig perlbox mxrtoolkit ivc hbp mptbox midiki artoolkit</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> azureus bom waste dpatoolkit aistockbot programe j-alice yale openpnl jcaptcha vhypno ecell care2002 bioera patientrunner biosig perlbox mxrtoolkit</font></li>
+<li><font color="000000">Change the <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> system to download everything later.</font></li>
+<li><font color="000000">Develop the ability to automatically infer plans based on statements.</font>
+<font color="000000">For instance in the above statement: &lt;&lt;&lt;Develop <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> architecture using Rational <a href="http://frdcsa.org/frdcsa/internal/architect/index.html">architect</a>.>>>, it is <a href="http://frdcsa.org/frdcsa/internal/clear/index.html">clear</a> to us that at least two tasks have been defined.</font>
+<font color="000000">Develop the <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> architecture.</font>
+<font color="000000">and   Download and install Rational <a href="http://frdcsa.org/frdcsa/internal/architect/index.html">architect</a></font></li>
+<li><font color="000000">Develop the ability to automatically infer plans based on statements.</font>
+<font color="000000">For instance in the above statement: <<<Develop <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> architecture using Rational <a href="http://frdcsa.org/frdcsa/internal/architect/index.html">architect</a>.>>>, it is <a href="http://frdcsa.org/frdcsa/internal/clear/index.html">clear</a> to us that at least two tasks have been defined.</font>
+<font color="000000">Develop the <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> architecture.</font>
+<font color="000000">and   Download and install Rational <a href="http://frdcsa.org/frdcsa/internal/architect/index.html">architect</a></font></li>
+<li><font color="000000">Develop <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> architecture using Rational <a href="http://frdcsa.org/frdcsa/internal/architect/index.html">architect</a>.</font></li>
+<li><font color="000000">As <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> finds systems that interest the user, it presents these systems as though in a flight simulator - perhaps using <a href="http://frdcsa.org/frdcsa/internal/critic/index.html">critic</a>, and feeds documents that should be read to <a href="http://frdcsa.org/frdcsa/internal/clear/index.html">clear</a></font></li>
+<li><font color="000000">You know, I'd almost believe <a href="http://frdcsa.org/frdcsa/internal/all/index.html">all</a> this bullshit people were saying, just if there was a free meal planner and something equivalent to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>/predator</font></li>
+<li><font color="000000">for <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>?</font>
+<font color="000000">http://www.ibiblio.org/linsearch/help.html</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> should also have a hand in planning software aquisition, for instance, interacting with machiavelli and nitpick to obtain software.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> can use <a href="http://frdcsa.org/frdcsa/internal/boss/index.html">boss</a> to build up models of what other projects are doing and therefore, predict project behaviour over time.</font></li>
+<li><font color="000000">Build an ontology of <a href="http://frdcsa.org/frdcsa/internal/unilang/index.html">unilang</a> messages, so for instance, some of them will be of the type "Yam would assist <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>", i.e., relations asserted between software systems.</font>
+<table>
+<tr><td width="25"></td><td>(&quot;comment&quot; &quot;321&quot; &quot;this is called \&quot;intersystem-relation\&quot;&quot;)</td></tr>
+</table></li>
+<li><font color="000000">(http://www.research.att.com/projects/wordseye/ - Art project AT&amp;T Internet Difference Engine - <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>)</font></li>
+<li><font color="000000">Need to fix <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> Perl method to make packages according to the correct name, and also to parse names correctly in <a href="http://frdcsa.org/frdcsa/internal/all/index.html">all</a> instances.</font></li>
+<li><font color="000000">(http://www.research.att.com/projects/wordseye/ - Art project AT&T Internet Difference Engine - <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>)</font></li>
+<li><font color="000000">integrate /var/lib/<a href="http://frdcsa.org/frdcsa/internal/myfrdcsa/index.html">myfrdcsa</a>/codebases/internal/predator/scripts/package-lookup-by-description.pl into <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>?</font></li>
+<li><font color="000000">apt-best : <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a></font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> should generate DOAPs.</font></li>
+<li><font color="000000">Get <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> doing what it should.</font></li>
+<li><font color="000000">Some of the things that we want to <a href="http://frdcsa.org/frdcsa/internal/do/index.html">do</a>: get Rolf to fix the opencyc daemonization problem - as this will make <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>'s KB system practical.</font>
+<font color="000000">We can always interoperate between CYC and other ontology systems I would imagine.</font></li>
+<li><font color="000000">Could even have <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> <a href="http://frdcsa.org/frdcsa/internal/do/index.html">do</a> prediction of which sites have new releases!</font></li>
+<li><font color="000000">Humor: [Predator drone sitting on ramp]  Well, there is one significant problem with excess temperature aft of the new the <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> dome installation, which was predicted by FEM.</font>
+<font color="000000">Andy, oh, well, I know how to fix that, that's really quite simple, there is a COTS based solution.</font>
+<font color="000000">I'll look into it today, just leave me the keys.</font>
+<font color="000000">Other: ok.  [shows the clock going, sawing hammering sounds] [shows andy standing by drone with an air conditioner mounted on the side].</font>
+<font color="000000">I just can't figure out where to plug it in.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> http://www.iam.ecs.soton.ac.uk/projects/</font></li>
+<li><font color="000000">Have to work on the way <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> handles the install/remove/search etc features, since the present CLI mechanism doesn't really work, but for the cases which we need right now.</font></li>
+<li><font color="000000">Perfect example of how I'm on the right track.</font>
+<font color="000000">I decided to persist and write everything, and then, just as I was finishing, I was trying to name the file appropriately, and I said, hmm, "<a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>::Method::Codebase.pm", but it was taken, and suprisingly, it was exactly what I was going to write, I just had to look at it to see how it worked so I could add it to the other end.</font></li>
+<li><font color="000000">http://www.aktors.org/technologies/researchmap/ is close to what we want for <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> extraction project.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> "software licensing matrix"</font></li>
+<li><font color="000000">Use <a href="http://frdcsa.org/frdcsa/internal/audience/index.html">audience</a> and <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> to, instead of sending many emails to one person, find <a href="http://frdcsa.org/frdcsa/internal/all/index.html">all</a> the projects they are PI on and contact them about the release status.</font></li>
+<li><font color="000000">We can use some of those graph theoretic notions of centrality from the CASOS papers in order to make determination of usage.</font>
+<font color="000000">Really, I should spend alot of today either reading the Schaums Software Engineering, or planning what to <a href="http://frdcsa.org/frdcsa/internal/do/index.html">do</a> (as long as it includes Schaums).</font>
+<font color="000000">But knowing myself, I will not, prefering to program <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> and predator.</font>
+<font color="000000">Which is in a way, the most intelligent choice possible.</font>
+<font color="000000">I <a href="http://frdcsa.org/frdcsa/internal/do/index.html">do</a> have to definitely plan for when work is to return on <a href="http://frdcsa.org/frdcsa/internal/shops/index.html">shops</a>.</font>
+<font color="000000">Let's say to be stupid that I will <a href="http://frdcsa.org/frdcsa/internal/do/index.html">do</a> it after sending out AIX 1.0.</font></li>
+<li><font color="000000">For <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> note that not <a href="http://frdcsa.org/frdcsa/internal/all/index.html">all</a> project pages include links to software, some include commands to use CVS.</font></li>
+<li><font color="000000">Compute error probabilities for every phase of the <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>-Predator system.</font></li>
+<li><font color="000000">Add a feature to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>.pl to insert a director name to one of the projects, an extension of the C-crr stuff.</font>
+<table>
+<tr><td width="25"></td><td>(&quot;completed&quot; &quot;95216&quot;)</td></tr>
+</table></li>
+<li><font color="000000">We could implement a search that looks at websites which have similar wording as ours, and have <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> give them a closer look, to find interested individuals.</font></li>
+<li><font color="000000">Use Dabbish's <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> information to determine illocutionary force applied to <a href="http://frdcsa.org/frdcsa/internal/audience/index.html">audience</a>.</font></li>
+<li><font color="000000">analysis question:  is it a mistake to not say, buckle down and focus exclusively on <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>, instead of the current "round robin" (there is actually a term for this) development strategy?</font></li>
+<li><font color="000000">solved the problem with things like <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>/<a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>.pm, is that you might have something like <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>/<a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>/Books.pm, and if you also have an attribute Books in <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>.pm, it will confuse it</font></li>
+<li><font color="000000">checkbot for <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a></font></li>
+<li><font color="000000">This will be useful for <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>: Collection of DFSG-compliant Licenses.</font>
+<font color="000000">Joachim Breitner announced that he has started to collect licenses that are compliant with the Debian Free Software Guidelines (DFSG).</font>
+<font color="000000">He also lists those that are not compliant, though.</font>
+<font color="000000">Frank Lichtenheld confirmed that he is working with Andreas Barth to create such a directory on the Debian website.</font></li>
+<li><font color="000000">set up <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> to automatically index any websites that we visit</font></li>
+<li><font color="000000">should have <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> filter out known bad things, like games.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> search results should be scored and used by <a href="http://frdcsa.org/frdcsa/internal/critic/index.html">critic</a>, etc.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> could write a <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>.xml file in source-archives entries with information that would be used to generate for instance the relevant sections of FRDCSA-website</font></li>
+<li><font color="000000">should capabilities requests through <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> automatically be recorded through <a href="http://frdcsa.org/frdcsa/internal/unilang/index.html">unilang</a>?</font>
+<font color="000000">I think they will certainly go through it since that is probably how it will communicate with the capabilities <a href="http://frdcsa.org/frdcsa/internal/manager/index.html">manager</a>, etc.</font></li>
+<li><font color="000000">we should write a research grant proposal that explains about the current disorganized state of software location tools, and the FRDCSA model, covering the process of locating software with <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>, packaging it with predator, and how this <a href="http://frdcsa.org/frdcsa/internal/all/index.html">all</a> ideally fits in with the Debian system.</font></li>
+<li><font color="000000">as part of <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>, the program's feature list ought to be extracted if possible</font></li>
+<li><font color="000000">should implement <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> clean to clean out broken packages, or similar</font></li>
+<li><font color="000000">package <a href="http://frdcsa.org/frdcsa/internal/myfrdcsa/index.html">myfrdcsa</a> before <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>-perl</font></li>
+<li><font color="000000">add clean to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> perl</font></li>
+<li><font color="000000">get <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> in the path, and also get ushell autoloaded at startup.</font></li>
+<li><font color="000000">for <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> perl</font></li>
+<li><font color="000000">$CPAN::Config, that is how we should <a href="http://frdcsa.org/frdcsa/internal/do/index.html">do</a> config, have $<a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>::Config, etc.</font></li>
+<li><font color="000000">expand the <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> Criteria system to interface somehow with <a href="http://frdcsa.org/frdcsa/internal/critic/index.html">critic</a>, I would imagine they are somehow related.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/critic/index.html">critic</a> will be dangerous and difficult to write.</font>
+<font color="000000">Maybe make it into an emacs system, or write an abstraction.</font>
+<font color="000000">Is <a href="http://frdcsa.org/frdcsa/internal/critic/index.html">critic</a> really necessary for <a href="http://frdcsa.org/frdcsa/internal/pse/index.html">pse</a>?</font>
+<font color="000000">I don't think so.</font>
+<font color="000000">Really, just move the frdcsa-perl shit into <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>, install those <a href="http://frdcsa.org/frdcsa/internal/pse/index.html">pse</a> mods, read their manuals and be done with it.</font>
+<font color="000000">Then you can hanker down on <a href="http://frdcsa.org/frdcsa/internal/pse/index.html">pse</a> again!</font></li>
+<li><font color="000000">or choose a program that does blah blah blah.</font>
+<font color="000000"><a href="http://frdcsa.org/frdcsa/internal/critic/index.html">critic</a> can thus be used by <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> to judge the value of potential software systems it should package.</font></li>
+<li><font color="000000">hmm, I can't tell.</font>
+<font color="000000">anyhow, irrelevant at this point let us finish with a <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>-perl script</font></li>
+<li><font color="000000">run substitute "<a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> install perl" on that list to obtain <a href="http://frdcsa.org/frdcsa/internal/all/index.html">all</a> objects installed on our system</font></li>
+<li><font color="000000">use this to create the "<a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> perl" use case, but don't put it in <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> since <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> is messy right now.</font></li>
+<li><font color="000000">consider using a download "accelerater" like prozilla with <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> if possible.</font></li>
+<li><font color="000000">libapt-pkg-perl should be useful to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>, autopackage</font></li>
+<li><font color="000000">cronapt can be useful to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a></font></li>
+<li><font color="000000">Should implement <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> and <a href="http://frdcsa.org/frdcsa/internal/myfrdcsa/index.html">myfrdcsa</a> before autopackage, since we need to get some basic sources.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> used here illustrates that a naive parse might miscategorize</font></li>
+<li><font color="000000">but remedy them in a way that doesn't put debian on the <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> screen.</font></li>
+<li><font color="000000">As a unique feature, <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> can automatically find systems related to a given system, by searching along several properties.</font>
+<font color="000000">One important concept is that a search is not thorough if it does not sometimes check further into things.</font>
+<font color="000000">For instance, to determine in what ways Amanda differs, i.e. what is the difference in its capabilities, it would have to be downloaded, as well as documents regarding it.</font></li>
+<li><font color="000000">Basically this simply consists of writing and using perl modules to provide rappers for various objects.</font>
+<font color="000000">The work I am doing on <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> is transposable to this domain as well.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> should insert planned actions to download stuff.</font></li>
+<li><font color="000000"><a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> will benefit from http://irisresearch.library.cornell.edu/VRC/resources.html#monitor</font></li>
+<li><font color="000000">should give <a href="http://frdcsa.org/frdcsa/internal/unilang/index.html">unilang</a> some nice emacs features too, just like <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>, but these need to be integrated at some point.</font>
+<font color="000000">Need to learn OO Elisp, as well as create some eigencomponents or templates for emacs like stuffs.</font></li>
+<li><font color="000000">Adopt <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> to superior configuration system.</font></li>
+<li><font color="000000">Interface the Clairvoyance system for ratings with <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>.</font></li>
+<li><font color="000000">Add a mode to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> to search and apt repository.</font></li>
+<li><font color="000000">Give <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a> the ability to list its modes, and create a system whereby we can simply add new modes as modules.</font></li>
+<li><font color="000000">Add a few commands to w3m to enable us to mark certain pages in certain ways, like bookmarks, only related to <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>.</font></li>
+<li><font color="000000">whenever a term gets identified, often it corresponds to a brief description of a specific capbiltiey.</font>
+<font color="000000">Immediately thereafter, the techniques given by the researchers are needed to be implemented.</font>
+<font color="000000">However, this follows the complete of absolutely essntial projects like <a href="http://frdcsa.org/frdcsa/internal/radar/index.html">radar</a>.</font></li>
+</ul></p><p><font face="Arial, Helvetica, 'Sans Serif'"><a name="publications"></a><p><font face="Arial, Helvetica, 'Sans Serif'">  </font></p><hr size="1" align="left" noshade="noshade">
+<font face="Arial, Helvetica, 'Sans Serif'">  <font face="Arial, Helvetica, 'Sans Serif'" size="-1">
+
+  This page is part of the FWeb package.<BR>
+  Last updated Mon Jan 20 01:59:32 CST 2014
+.<BR>
+
+</font>
+</font></td></tr></table></body></html>

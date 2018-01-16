@@ -1,0 +1,391 @@
+  • Add the ability to radar-web-search to download the containing webpages as
+    well as the links themselves. Add the ability to have kbfs index the items
+    (MD5 sum etc), assert metadata (such as where they were downloaded from,
+    and for what search). Have the ability to check if a given item has already
+    been downloaded for another search.
+  • add something to radar-web-search to have it automatically move completed
+    files into the appropriate directories.
+  • Add to radar and packager the ability to deal with individual files instead
+    of packages, such as http://www.cs.toronto.edu/cogrobo/Systems/
+    golog_swi.pl.
+  • Add git support to radar
+  • Add the ability to radar to check out packages from svn, etc, and store the
+    locations.
+  • Fix the radar code for downloading software.
+  • Help Haydee set up her radar system for tracking hollywood production
+    information and leads relating to job acquisition.
+  • Add dataset methods to radar/packager
+  • Add GIT to radar methods
+  • Fix the setup for radar-web-search -p, as if you try to download multiple
+    items, you can't put them together, as we can elsewhere with radar.
+  • Figure out what to do for radar-web-search if touch fails, probably just
+    add a timeout
+  • Update radar::method::freshmeat to when there is no direct link, analyze a
+    the homepage
+
+        ("due-date-for-entry" "106282" "6 days")
+
+  • Set it up so that radar-web-search also triggers a raiders-of-the-ftp-site
+    search
+  • Make an effort to automate radar.
+  • Find that page of useful papers, and process them all for links, and run
+    links through radar to find software
+  • Fix problem with radar sourceforge failing, have it retry
+  • predator/sorcerer/radar should remember if it has looked for some item
+    before and whether it worked (so we don't keep trying the same sites
+    without modulation of our strategy)
+  • Figure out what the problem with the decision tree for radar when you have
+    to delete the elements.
+  • radar should say whether there was a project site or whether it just didn't
+    find any links when there was one.
+  • Should have a command for telling radar where you found something after the
+    fact.
+  • try to have radar automatically detect when there are multiple systems to a
+    single page.
+  • Check out if .radar files are still being left!
+  • radar should be able to get things from cvs.
+  • Should have URL references to projects - we can start to extract this from
+    the .radar files for now.
+  • Some things to fix: (apt-utils-show-package \C-rd), as well as make it so
+    radar checks to see if something is installed, available, etc.
+  • radar install for Perl modules should offer to upload the package into the
+    central repository.
+  • Add CVS to radar
+  • Develop a radar queue, so that we can queue downloads for later when we
+    have bandwidth.
+  • Fix problem with radar sourceforge urls
+  • Fix radar to support automatic figuring out (testing whether the system is
+    available in various archives (that is not to say that it in't something
+    simply because it is not in the archives.))
+  • Add functionality to radar or something to upload code to CPAN.
+  • radar should point out if something is not found
+  • Allow forcing of methods using radar.
+  • Note that currently radar won't install Sys::Manage, but will install
+    Sys::Manage::Conn which is really sys::manage, so we need to figure out why
+    and fix that.
+  • Add code to radar to allow it to auto select the most recent versions of
+    files.
+  • radar should support creating multiple projects for a single page.
+  • Add the ability to radar perl to prequeue predependencies.
+  • radar should support becoming root if necessary.
+  • obviously the learner to radar must take into account the arguments as well
+    as the search term for learning
+  • Maybe seeker should actually handle requests for software, and utilize cso,
+    radar, etc.
+  • bard's acronym stuff should support trying to fill in an acronym, e.g.
+    radar
+  • http://search.cpan.org/recent very useful to radar, architect, etc. Give
+    most recent perl packages per day, lots.
+  • Make this from the radar or predator script get dependencies run on all the
+    boss codebases.
+  • radar should log all queries.
+  • Integrate radar with cso, so it can narrow down the choices...
+  • Perhaps have the radar jump corpus -s feature not show up upon recent
+    repeated jumps to the same place
+  • Use radar-items.dat to get a list of software websites that can be used to
+    enlarge the dataset for system-ie
+  • Make radar-web-search multi-threaded
+  • Fix packager being called two times after radar (0 2)
+  • Incorporate in radar the ability to index datasets.
+  • Figure out what happened to my changes to radar-web-search
+
+        ("completed" "75535")
+
+  • Move radar-something.dat to the data dir.
+  • There is a problem with radar::Method::Sourceforge
+
+        ("completed" "75323")
+
+  • radar http://en.wikipedia.org/wiki/
+    List_of_free_software_project_directories
+  • Get radar packaged and ready to go.
+  • Add dataset to the types of things that radar can download
+  • Try implementing radar using spark.
+  • Get radar-web-search to do multi-threaded downloading.
+  • Add support to radar for downloading debs.
+  • Maybe set up a learning approach to finding download links in radar
+    -web-search
+  • Add radar support for CPANPLUS::Dist::Deb
+
+        ("completed" "45507")
+
+  • Add radar support for ?CPANPlus::Deb?
+
+        ("unilang-message-classify" "45505" "deleted")
+
+  • radar will eventually depend on: cpan-libcpanplus-perl
+    cpan-libcpanplus-dist-build-perl cpan-libcpanplus-dist-deb-perl
+  • radar should look for cpan-libX-perl packages in addition to libX-perl
+    packages if it has that debian cpan repo in the sources.list
+  • Add datasets to radar directory completion
+
+        ("completed" "33678")
+
+  • radar: automatically detect datasets and move them to the dataset dir
+  • radar: for SF projects we can check what OS they are for, and if in the
+    case of windows a binary is not available, we can skip it
+  • radar: for a download of the source, check that it is not w32 or something
+  • Note that in the case of opennlp on sourceforge some files remained hidden
+    from radar, namely the models file.
+  • Fix bug where radar thinks something is a directory but it isn't.
+  • Have radar correctly process stuff like stanford-ner-2007-11-05
+  • Get radar-queue-system to work differently, instead inserting into freekbs,
+    and then having the system periodically prompt to download these. That task
+    can come up under the task manager frequently
+  • Fix problem with radar not getting the latest version of tagextract from
+    sourceforge.
+
+        ("completed" "27170")
+
+  • Add launchpad (bazaar) to radar.
+  • Integrate Subversion repository support for radar.
+  • radar needs to be able to handle subversion
+
+        ("completed" "18061")
+
+  • Add radar code for handling code.google.com
+
+        ("same-as" "16809" "13138")
+
+  • Add a feature to radar to be able collect datasets separately from systems?
+  • Add googlecode to radar sources
+
+        ("same-as" "16809" "13138")
+        ("completed" "13138")
+
+  • Configure radar to insert entries into cso when they are added.
+  • radar should compute prerequisites before attempting to build.
+  • radar should be able to force installation from a particular platform
+  • sudo radar remove Gnome2 -> doesn't remove the gnome2 debian package or
+    clean the cpan build stuff when both are installed.
+  • When packaging certain types of applications, it may be necessary to
+    retrieve certain types of files. This mapping should be learnt. We should
+    record which files we are not saving as well in the .radar files.
+  • I just realized that audience is really like CMU's radar.
+  • radar should debtags items when they are being downloaded - automatically
+    classifying some of the items, and then letting the user subsetselect them
+  • "radar homepage tabari" prints out http://www.ku.edu/~keds/software.dir/
+    tabari.html
+  • Should probably have all licenses manually verified - with information
+    helpfully provided by radar/predator.
+
+        ("depends" "3689" "45777")
+        ("comment" "3689" "Use fossology for this.")
+
+  • radar might need to load the existing .radar file when adding items to an
+    existing directory
+  • Need to start listing major features of different systems. For instance, it
+    should be listed on radar, through capabilities management that it handles
+    perl modules and scripts the way it does.
+  • radar should have a give me the name format: i.e. radar --name webstructor
+    http://www.webstructor.net/worlds/vm.jar
+  • radar doesn't install perl module dependencies correctly.
+  • Note that radar appears to check CPAN before it even checks apt-get for
+    perl modules, this is suboptimal.
+  • Both radar and Predator should save information about what they are doing
+    in the directories of systems they have downloaded.
+  • Basically radar, only applied to people?
+  • I can have radar and predator record everytime they make a package so we
+    can even calibrate on how all events affect one another.
+  • Need to have radar output somekind of metadata for the external codebases,
+    including url, etc, so that we stop losing information.
+  • radar needs to be developed so that it can also try to lookup various
+    components. To be honest, why don't I write radar as an NPDDL tonight,
+    perhaps before or after I get manager doing that sleep learning stuff.
+    Justin could use that sleep learning stuff.
+  • Fix bug with radar::Perl that creates a module under the name of a
+    submodule.
+  • I'm using radar to install a module it depends on.
+  • Here is a good example for Justin. A screen saver pops up saying the number
+    of hectares of tropical rainforest remaining, and it is counting down. You
+    could say that there is a satellite network that uses radar imaging to
+    compute a real time estimate and that this is broadcast to a server which
+    these screensavers listen to, or you say that they glean this info from
+    some rough statistics.
+  • Need to write email to Bryan Klimt about ??? Show him my project, also ask
+    him about radar and Javelin.
+  • Here is a somewhat new idea: Use radar to come up with a list of probable
+    candidates for a given software systems homepage and/or related pages.
+    Then, have the user verify this correspendence. Then, implement a
+    classifier, such as the one from WebKB, that determines whether a given
+    page is a homepage or not. This will be important with our webspider. The
+    user can also manually review this webspider's results for further
+    clarification. Lastly, software should then be automatically downloaded and
+    ontologies populated with values mined from the software, its documentation
+    and webpages.
+  • radar azureus bom waste dpatoolkit aistockbot programe j-alice yale openpnl
+    jcaptcha vhypno ecell care2002 bioera patientrunner biosig perlbox
+    mxrtoolkit ivc hbp mptbox midiki artoolkit
+  • radar azureus bom waste dpatoolkit aistockbot programe j-alice yale openpnl
+    jcaptcha vhypno ecell care2002 bioera patientrunner biosig perlbox
+    mxrtoolkit
+  • Change the radar system to download everything later.
+  • Develop the ability to automatically infer plans based on statements. For
+    instance in the above statement: <<<Develop radar architecture using
+    Rational architect.>>>, it is clear to us that at least two tasks have been
+    defined. Develop the radar architecture. and Download and install Rational
+    architect
+  • Develop the ability to automatically infer plans based on statements. For
+    instance in the above statement: <<radar architecture using Rational
+    architect.>>>, it is clear to us that at least two tasks have been defined.
+    Develop the radar architecture. and Download and install Rational architect
+  • Develop radar architecture using Rational architect.
+  • As radar finds systems that interest the user, it presents these systems as
+    though in a flight simulator - perhaps using critic, and feeds documents
+    that should be read to clear
+  • You know, I'd almost believe all this bullshit people were saying, just if
+    there was a free meal planner and something equivalent to radar/predator
+  • for radar? http://www.ibiblio.org/linsearch/help.html
+  • radar should also have a hand in planning software aquisition, for
+    instance, interacting with machiavelli and nitpick to obtain software.
+  • radar can use boss to build up models of what other projects are doing and
+    therefore, predict project behaviour over time.
+  • Build an ontology of unilang messages, so for instance, some of them will
+    be of the type "Yam would assist radar", i.e., relations asserted between
+    software systems.
+
+        ("comment" "321" "this is called \"intersystem-relation\"")
+
+  • (http://www.research.att.com/projects/wordseye/ - Art project AT&T Internet
+    Difference Engine - radar)
+  • Need to fix radar Perl method to make packages according to the correct
+    name, and also to parse names correctly in all instances.
+  • (http://www.research.att.com/projects/wordseye/ - Art project AT&T Internet
+    Difference Engine - radar)
+  • integrate /var/lib/myfrdcsa/codebases/internal/predator/scripts/
+    package-lookup-by-description.pl into radar?
+  • apt-best : radar
+  • radar should generate DOAPs.
+  • Get radar doing what it should.
+  • Some of the things that we want to do: get Rolf to fix the opencyc
+    daemonization problem - as this will make radar's KB system practical. We
+    can always interoperate between CYC and other ontology systems I would
+    imagine.
+  • Could even have radar do prediction of which sites have new releases!
+  • Humor: [Predator drone sitting on ramp] Well, there is one significant
+    problem with excess temperature aft of the new the radar dome installation,
+    which was predicted by FEM. Andy, oh, well, I know how to fix that, that's
+    really quite simple, there is a COTS based solution. I'll look into it
+    today, just leave me the keys. Other: ok. [shows the clock going, sawing
+    hammering sounds] [shows andy standing by drone with an air conditioner
+    mounted on the side]. I just can't figure out where to plug it in.
+  • radar http://www.iam.ecs.soton.ac.uk/projects/
+  • Have to work on the way radar handles the install/remove/search etc
+    features, since the present CLI mechanism doesn't really work, but for the
+    cases which we need right now.
+  • Perfect example of how I'm on the right track. I decided to persist and
+    write everything, and then, just as I was finishing, I was trying to name
+    the file appropriately, and I said, hmm, "radar::Method::Codebase.pm", but
+    it was taken, and suprisingly, it was exactly what I was going to write, I
+    just had to look at it to see how it worked so I could add it to the other
+    end.
+  • http://www.aktors.org/technologies/researchmap/ is close to what we want
+    for radar extraction project.
+  • radar "software licensing matrix"
+  • Use audience and radar to, instead of sending many emails to one person,
+    find all the projects they are PI on and contact them about the release
+    status.
+  • We can use some of those graph theoretic notions of centrality from the
+    CASOS papers in order to make determination of usage. Really, I should
+    spend alot of today either reading the Schaums Software Engineering, or
+    planning what to do (as long as it includes Schaums). But knowing myself, I
+    will not, prefering to program radar and predator. Which is in a way, the
+    most intelligent choice possible. I do have to definitely plan for when
+    work is to return on shops. Let's say to be stupid that I will do it after
+    sending out AIX 1.0.
+  • For radar note that not all project pages include links to software, some
+    include commands to use CVS.
+  • Compute error probabilities for every phase of the radar-Predator system.
+  • Add a feature to radar.pl to insert a director name to one of the projects,
+    an extension of the C-crr stuff.
+
+        ("completed" "95216")
+
+  • We could implement a search that looks at websites which have similar
+    wording as ours, and have radar give them a closer look, to find interested
+    individuals.
+  • Use Dabbish's radar information to determine illocutionary force applied to
+    audience.
+  • analysis question: is it a mistake to not say, buckle down and focus
+    exclusively on radar, instead of the current "round robin" (there is
+    actually a term for this) development strategy?
+  • solved the problem with things like radar/radar.pm, is that you might have
+    something like radar/radar/Books.pm, and if you also have an attribute
+    Books in radar.pm, it will confuse it
+  • checkbot for radar
+  • This will be useful for radar: Collection of DFSG-compliant Licenses.
+    Joachim Breitner announced that he has started to collect licenses that are
+    compliant with the Debian Free Software Guidelines (DFSG). He also lists
+    those that are not compliant, though. Frank Lichtenheld confirmed that he
+    is working with Andreas Barth to create such a directory on the Debian
+    website.
+  • set up radar to automatically index any websites that we visit
+  • should have radar filter out known bad things, like games.
+  • radar search results should be scored and used by critic, etc.
+  • radar could write a radar.xml file in source-archives entries with
+    information that would be used to generate for instance the relevant
+    sections of FRDCSA-website
+  • should capabilities requests through radar automatically be recorded
+    through unilang? I think they will certainly go through it since that is
+    probably how it will communicate with the capabilities manager, etc.
+  • we should write a research grant proposal that explains about the current
+    disorganized state of software location tools, and the FRDCSA model,
+    covering the process of locating software with radar, packaging it with
+    predator, and how this all ideally fits in with the Debian system.
+  • as part of radar, the program's feature list ought to be extracted if
+    possible
+  • should implement radar clean to clean out broken packages, or similar
+  • package myfrdcsa before radar-perl
+  • add clean to radar perl
+  • get radar in the path, and also get ushell autoloaded at startup.
+  • for radar perl
+  • $CPAN::Config, that is how we should do config, have $radar::Config, etc.
+  • expand the radar Criteria system to interface somehow with critic, I would
+    imagine they are somehow related.
+  • critic will be dangerous and difficult to write. Maybe make it into an
+    emacs system, or write an abstraction. Is critic really necessary for pse?
+    I don't think so. Really, just move the frdcsa-perl shit into radar,
+    install those pse mods, read their manuals and be done with it. Then you
+    can hanker down on pse again!
+  • or choose a program that does blah blah blah. critic can thus be used by
+    radar to judge the value of potential software systems it should package.
+  • hmm, I can't tell. anyhow, irrelevant at this point let us finish with a
+    radar-perl script
+  • run substitute "radar install perl" on that list to obtain all objects
+    installed on our system
+  • use this to create the "radar perl" use case, but don't put it in radar
+    since radar is messy right now.
+  • consider using a download "accelerater" like prozilla with radar if
+    possible.
+  • libapt-pkg-perl should be useful to radar, autopackage
+  • cronapt can be useful to radar
+  • Should implement radar and myfrdcsa before autopackage, since we need to
+    get some basic sources.
+  • radar used here illustrates that a naive parse might miscategorize
+  • but remedy them in a way that doesn't put debian on the radar screen.
+  • As a unique feature, radar can automatically find systems related to a
+    given system, by searching along several properties. One important concept
+    is that a search is not thorough if it does not sometimes check further
+    into things. For instance, to determine in what ways Amanda differs, i.e.
+    what is the difference in its capabilities, it would have to be downloaded,
+    as well as documents regarding it.
+  • Basically this simply consists of writing and using perl modules to provide
+    rappers for various objects. The work I am doing on radar is transposable
+    to this domain as well.
+  • radar should insert planned actions to download stuff.
+  • radar will benefit from http://irisresearch.library.cornell.edu/VRC/
+    resources.html#monitor
+  • should give unilang some nice emacs features too, just like radar, but
+    these need to be integrated at some point. Need to learn OO Elisp, as well
+    as create some eigencomponents or templates for emacs like stuffs.
+  • Adopt radar to superior configuration system.
+  • Interface the Clairvoyance system for ratings with radar.
+  • Add a mode to radar to search and apt repository.
+  • Give radar the ability to list its modes, and create a system whereby we
+    can simply add new modes as modules.
+  • Add a few commands to w3m to enable us to mark certain pages in certain
+    ways, like bookmarks, only related to radar.
+  • whenever a term gets identified, often it corresponds to a brief
+    description of a specific capbiltiey. Immediately thereafter, the
+    techniques given by the researchers are needed to be implemented. However,
+    this follows the complete of absolutely essntial projects like radar.

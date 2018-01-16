@@ -1,0 +1,21 @@
+Here are some features to add.
+
+Have the ability to add keywords to bootstrap the search.
+
+Save state, resume without reloading.
+
+Have the ability to represent and save information about project
+relations.
+
+Add interface to capability requests in unilang.
+
+
+Some of the stuff it should know about the project.
+
+The CSO identifier for the project.
+
+What the state of the packaging attempt is for the system.
+
+Whether the package is installed.
+
+Add document similarity search capability.

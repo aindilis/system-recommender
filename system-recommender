@@ -1,0 +1,20 @@
+#!/usr/bin/perl -w
+
+use SystemRecommender;
+
+use UniLang::Agent::Agent;
+use UniLang::Util::Message;
+
+$UNIVERSAL::agent = UniLang::Agent::Agent->new
+  (Name => "System-Recommender",
+   ReceiveHandler => \&Receive);
+$UNIVERSAL::agent->DoNotDaemonize(1);
+$UNIVERSAL::systemrecommender = SystemRecommender->new();
+
+sub Receive {
+  my %args = @_;
+  $UNIVERSAL::systemrecommender->ProcessMessage
+    (Message => $args{Message});
+}
+
+$UNIVERSAL::systemrecommender->Execute();
